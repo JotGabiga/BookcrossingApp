@@ -1,13 +1,65 @@
 // COLORS
-$basic-color: #F4F4F4;
-$basicDarker-color: #E4E2DF;
-$accentDarker-color: #EE726B;
-$accent-color:  #FCB6A0;
-$dark-color: #545454;
-$black-color: #232323;
+$white-color: #F4F4F4;
+$basic-color: #ECECEC;
+$basicDarker-color:  #E3D6CE;
+$accentDarker-color: #FF375B;
+$accent-color:   #F9F150;
+$line-color: #DACDC5;
+$dark-color: #232323;
 $accentDarker-filter: invert(53%) sepia(8%) saturate(3998%) hue-rotate(314deg) brightness(110%) contrast(87%);
 
 // FONTS
 $header-font-family: 'Yeseva One', serif;
-$text-font-family: "Inter", sans-serif;
+$text-font-family: "Roboto", sans-serif;
 
+// TEXT
+
+@mixin logo(){
+font-family: "Roboto", sans-serif;
+font-weight: 900;
+font-size: 2.5vh;
+letter-spacing:  0.16em;
+color: $dark-color;
+text-transform: uppercase;
+&:hover {
+    cursor: pointer;
+    color:$accentDarker-color;
+  }
+
+}
+@mixin mainHeader($text-align) {
+    font-family: $header-font-family;
+    font-weight: 400;
+    font-size: 4.5vh;
+    text-align: $text-align;
+    color: $dark-color;
+ }
+  @mixin text($text-align) {
+    font-family: $text-font-family;
+    font-weight: normal;
+    font-size: 1.8vh;
+    letter-spacing: 0.05em;
+    color: $dark-color;
+    text-align: $text-align;
+  }
+
+// BUTTONS
+
+@mixin filterButton() {
+    width: 130px;
+    height: 36px;
+    background: $accent-color;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    border: 1px solid $line-color;
+    font-family: $text-font-family;
+    font-size: 1.5vh;
+    font-weight: 500;
+    color: $dark-color;
+    &:hover {
+      background: $accentDarker-color;
+      cursor: pointer;
+      color:$dark-color;
+      border: none;
+    }
+  }
