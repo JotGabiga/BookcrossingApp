@@ -1,34 +1,46 @@
 @import '../../variables/variables.scss';
 .home{
-    padding:50px 20% 0px 20%;
+    @include containerStyle(50px 0px 50px 0px, column)
+}
+.bacgroundContainer{
+    padding-top:50px;
     background-color: $basicDarker-color;
-    height:750px;
+    height: 720px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
 }
 .searchSection{
+    z-index: 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-end; 
 }
 .textSection{
-    width: 60%;
-    padding:180px 0px 0px 5%;
+    z-index: 2;
+    padding:250px 0px 20px 30%;
     h1{
-        @include mainHeader(right);
+        @include headline1(right);
+        margin:30px 0px 30px 0px
     }
     article{
-        @include text(right);
-    }
-}
-.imageSection{
-    width: 40%;
-    img{
-        width: 100%;
+        @include body1(right);
     }
 }
 .filtrSection{
-    padding: 30px 0px 0px 0px;
+    padding: 20px 0px 70px 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     button{
         @include filterButton();
+        z-index: 2;
+        margin: 0px 10px 0px 10px;
     }
+}
+.booksSection{
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
 }

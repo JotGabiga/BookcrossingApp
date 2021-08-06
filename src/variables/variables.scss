@@ -2,11 +2,12 @@
 $white-color: #F4F4F4;
 $basic-color: #ECECEC;
 $basicDarker-color:  #E3D6CE;
-$accentDarker-color: #FF375B;
-$accent-color:   #F9F150;
-$line-color: #DACDC5;
-$dark-color: #232323;
-$accentDarker-filter: invert(53%) sepia(8%) saturate(3998%) hue-rotate(314deg) brightness(110%) contrast(87%);
+$accentDarker-color: #A5BEC6;
+$accent-color:   #CBC75B
+;
+$gray-color: #d1d1d1;
+$dark-color:#191919;
+$basicDarker-filter: invert(95%) sepia(8%) saturate(513%) hue-rotate(323deg) brightness(92%) contrast(92%);
 
 // FONTS
 $header-font-family: 'Yeseva One', serif;
@@ -17,49 +18,133 @@ $text-font-family: "Roboto", sans-serif;
 @mixin logo(){
 font-family: "Roboto", sans-serif;
 font-weight: 900;
-font-size: 2.5vh;
+font-size: 2.3vh;
 letter-spacing:  0.16em;
 color: $dark-color;
 text-transform: uppercase;
+// text-decoration: underline;
 &:hover {
     cursor: pointer;
-    color:$accentDarker-color;
   }
-
 }
-@mixin mainHeader($text-align) {
-    font-family: $header-font-family;
-    font-weight: 400;
-    font-size: 4.5vh;
-    text-align: $text-align;
-    color: $dark-color;
- }
-  @mixin text($text-align) {
-    font-family: $text-font-family;
-    font-weight: normal;
-    font-size: 1.8vh;
-    letter-spacing: 0.05em;
-    color: $dark-color;
-    text-align: $text-align;
-  }
-
+@mixin headline1($text-align) {
+  font-family:  "Yeseva One";
+  font-size: 76px;
+  text-align: $text-align;
+  color: $dark-color;
+  font-weight: 400;
+};
+@mixin headline2($text-align) {
+  font-family: "Yeseva One";
+  font-size: 54px;
+  text-align: $text-align;
+  color: $dark-color;
+  font-weight: 400;
+};
+@mixin headline3($text-align) {
+  font-family: "Yeseva One";
+  font-size: 43px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin headline4($text-align) {
+  font-family: "Yeseva One";
+  font-size: 31px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin headline5($text-align){
+  font-family: "Roboto";
+  font-size: 22px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin headline6($text-align) {
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin body1($text-align) {
+  font-family: "Roboto";
+  font-size: 16px;
+  text-align: $text-align;
+  color: $dark-color;
+  letter-spacing: 0.05em;
+  line-height: 32px;
+};
+@mixin body2($text-align) {
+  font-family: "Roboto";
+  font-size: 14px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin subtitle1($text-align) {
+  font-family: "Roboto";
+  font-size: 14px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin subtitle2($text-align) {
+  font-family: "Yeseva One";
+  font-size: 13px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin button($text-align) {
+  font-family: "Roboto";
+  font-size: 14px;
+  weight:500;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin overline($text-align) {
+  font-family: "Roboto";
+  font-size: 10px;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin caption($text-align) {
+  font-family: "Roboto";
+  font-size: 12px;
+  text-align: $text-align;
+  color: $dark-color;
+};
 // BUTTONS
 
 @mixin filterButton() {
+    @include button(center);
     width: 130px;
     height: 36px;
-    background: $accent-color;
+    background: $accentDarker-color;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    border: 1px solid $line-color;
+    border: none;
     font-family: $text-font-family;
     font-size: 1.5vh;
     font-weight: 500;
     color: $dark-color;
     &:hover {
-      background: $accentDarker-color;
+      background: $accent-color;
       cursor: pointer;
       color:$dark-color;
       border: none;
     }
   }
+@mixin grayButton(){
+  @include button(center);
+  background: $gray-color;
+  border-radius: 25px;
+  width:125px;
+  height:36px;
+  border:none;
+}
+// MAIN CONTAINER STYLES
+@mixin containerStyle($padding, $flex-direction) {
+  padding: $padding;
+  margin: 0px 20% 0px 20%;
+  display: flex;
+  flex-direction: $flex-direction;
+}

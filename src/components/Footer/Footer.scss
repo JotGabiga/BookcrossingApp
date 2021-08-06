@@ -1,0 +1,41 @@
+@import '../../variables/variables.scss';
+.footer{
+    height:200px;
+    background-color: $dark-color;
+    display: flex;
+    padding:0px 20% 0px 20%;
+}
+.footerContainer{
+    width:50%;
+    display: flex;
+}
+.socialMediaContainer{
+    display: flex;
+    justify-content: space-between;
+    img{
+        filter: $basicDarker-filter;
+        width:25px;
+        height: 25px;
+    }
+}
+.menuContainer{
+    justify-content: flex-end;
+ li{
+     @include subtitle1(right);
+     color:$basicDarker-color;
+     margin:15px;
+     list-style: none;
+ }
+}
+.sighn{
+    h6{
+        @include caption(left);
+        color:$basicDarker-color;
+    }
+}
+.test{
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    padding-top: 100px;
+}

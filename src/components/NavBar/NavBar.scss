@@ -10,7 +10,8 @@ background: $white-color;
 box-sizing: border-box;
 overflow: hidden;
 position: fixed;
-z-index: 200;
+z-index: 100;
+border: 1px solid $gray-color;
 }
 .logoContainer{
     width: 40%;
@@ -23,9 +24,16 @@ z-index: 200;
 .navContainer{
   width: 30%;
   display: flex;
+  button{
+      border:none;
+      background-color: $white-color;
+  }
     img{
         height: 25px;
         filter: $dark-color; 
+    }
+    &:hover img{
+        cursor: pointer;
     }
 }
 .rightContainer{
@@ -46,4 +54,33 @@ z-index: 200;
             height: 15px;
             filter: $dark-color;
         }
+}
+.navModal{
+    position: absolute;
+    top:0px;
+    left:0px;
+    padding: 10px 20px 0px 0px;
+    width:21%;
+    height: 100%;
+    background-color: $basic-color;
+}
+.exitSec{
+display: flex;
+justify-content: flex-end;
+img{
+    height: 20px;
+}
+&:hover img{
+cursor: pointer;
+}
+}
+.navSec{
+    li{
+        color:black;
+        font-size: 16px;
+        list-style: none;
+        @include headline6(left);
+        margin:20px 0px 20px 0px
+    }
+   
 }

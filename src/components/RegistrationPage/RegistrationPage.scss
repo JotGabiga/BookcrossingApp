@@ -1,0 +1,33 @@
+@import '../../variables/variables.scss';
+
+.registrationPage{
+    @include containerStyle(100px 0px 100px 0px , row);
+    background-color: $basic-color;
+    z-index: 2;
+}
+.regContainer{
+    padding: 0px 50px 0px 50px;
+    width:50%;
+    z-index: 2;
+}
+.bacgroundContainer{
+    padding-top:50px;
+    background-color: $white-color;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+.imageSection{
+    h1{
+      @include headline3(center)
+    }
+    article{
+        @include headline5(center)
+      }
+      img{
+          width:100%;
+      }
+}
