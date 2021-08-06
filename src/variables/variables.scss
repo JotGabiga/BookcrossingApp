@@ -6,9 +6,10 @@ $accentDarker-color: #A5BEC6;
 $accent-color:   #CBC75B
 ;
 $gray-color: #d1d1d1;
+$darkgray-color: #545454;
 $dark-color:#191919;
 $basicDarker-filter: invert(95%) sepia(8%) saturate(513%) hue-rotate(323deg) brightness(92%) contrast(92%);
-
+$darkgray-filter: invert(32%) sepia(1%) saturate(0%) hue-rotate(73deg) brightness(96%) contrast(91%);
 // FONTS
 $header-font-family: 'Yeseva One', serif;
 $text-font-family: "Roboto", sans-serif;
@@ -72,12 +73,14 @@ text-transform: uppercase;
   color: $dark-color;
   letter-spacing: 0.05em;
   line-height: 32px;
+  font-weight: 400;
 };
 @mixin body2($text-align) {
   font-family: "Roboto";
   font-size: 14px;
   text-align: $text-align;
   color: $dark-color;
+  font-weight: 400;
 };
 @mixin subtitle1($text-align) {
   font-family: "Roboto";
@@ -141,6 +144,9 @@ text-transform: uppercase;
   height:36px;
   border:none;
 }
+// @mixin basicButton(){
+  
+// }
 // MAIN CONTAINER STYLES
 @mixin containerStyle($padding, $flex-direction) {
   padding: $padding;

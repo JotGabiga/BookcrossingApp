@@ -6,7 +6,6 @@
     z-index: 2;
 }
 .regContainer{
-    padding: 0px 50px 0px 50px;
     width:50%;
     z-index: 2;
 }
@@ -20,7 +19,22 @@
     top: 0px;
     z-index: 1;
 }
+.formSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 228px 0px 0px 80px;
+    h6{
+        @include body1(center);
+        margin: 20px 0px 20px 0px;
+    }
+    // button{
+    //     @include basicButton();
+    // }
+}
 .imageSection{
+    padding: 0px 80px 0px 0px;
     h1{
       @include headline3(center)
     }
@@ -31,3 +45,66 @@
           width:100%;
       }
 }
+//   POPRAWIĆ BUTTONY ZDUBLOWANY KOD
+.button{
+    width:100%;
+    background-color: $basicDarker-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 7px 30px 7px 30px;
+    border-radius: 24px;
+    background: '#E3D6CE';
+    text-transform: inherit;
+    img{
+        height: 30px;
+        padding-right: 50px;
+        filter: $darkgray-filter;
+    }
+  }
+  .button:hover {
+    background-color: $accent-color;
+  }
+  .button-label {
+    color:$darkgray-color;
+  }
+  .input{
+      background-color: $white-color;
+      border-radius: 24px;
+      width: 100%;
+      margin-bottom: 25px;
+  }
+  .MuiInputBase-root 
+  {
+    background-color: $white-color;
+    border-radius: 24px;
+    width: 100%;
+}
+// CHECKBOX STYLE
+    .MuiIconButton-label {
+        color:grey;
+  }
+  .MuiTouchRipple-root{
+    color:rgb(0, 0, 0);
+    &:hover{
+        color:rgb(0, 0, 0);
+    }
+  }
+  .MuiFormControlLabel-label{
+      @include caption(left)
+  }
+
+//   POPRAWIĆ BUTTONY ZDUBLOWANY KOD
+  .basicButton{
+    margin:40px;
+    background: $accent-color;
+    border-radius: 25px;
+    width:180px;
+    height:42px;
+    border:none;
+    color: $dark-color;
+    &:hover{
+        background-color: $accentDarker-color;
+    }
+  }
+  .basicButton-label{
+    @include button(center);
+  }
