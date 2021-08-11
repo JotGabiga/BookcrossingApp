@@ -33,7 +33,15 @@
     //     @include basicButton();
     // }
 }
+.checkboxSection{
+  width:100%;
+  display: flex;
+  align-items: flex-start;
+}
 .imageSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
     padding: 0px 80px 0px 0px;
     h1{
       @include headline3(center)
@@ -43,29 +51,10 @@
       }
       img{
           width:100%;
+          max-width: 500px;
       }
 }
 //   POPRAWIĆ BUTTONY ZDUBLOWANY KOD
-.button{
-    width:100%;
-    background-color: $basicDarker-color;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 7px 30px 7px 30px;
-    border-radius: 24px;
-    background: '#E3D6CE';
-    text-transform: inherit;
-    img{
-        height: 30px;
-        padding-right: 50px;
-        filter: $darkgray-filter;
-    }
-  }
-  .button:hover {
-    background-color: $accent-color;
-  }
-  .button-label {
-    color:$darkgray-color;
-  }
   .input{
       background-color: $white-color;
       border-radius: 24px;
@@ -91,20 +80,22 @@
   .MuiFormControlLabel-label{
       @include caption(left)
   }
-
-//   POPRAWIĆ BUTTONY ZDUBLOWANY KOD
+// BUTTON
   .basicButton{
-    margin:40px;
-    background: $accent-color;
-    border-radius: 25px;
-    width:180px;
-    height:42px;
-    border:none;
-    color: $dark-color;
-    &:hover{
-        background-color: $accentDarker-color;
-    }
+    @include basicButton();
   }
   .basicButton-label{
     @include button(center);
+  }
+
+  .button{
+  @include roundButton();
+  img {
+    height: 30px;
+    padding-right: 50px;
+    filter: $darkgray-filter;
+  }
+  }
+  .button-label {
+    color:$darkgray-color;
   }

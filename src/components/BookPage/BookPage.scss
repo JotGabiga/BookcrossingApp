@@ -1,0 +1,96 @@
+@import "../../variables/variables.scss";
+.bookPage {
+  @include containerStyle(100px 0px 100px 0px, column);
+}
+.commentSection {
+  display: flex;
+  flex-direction: column;
+}
+.bookCoverSection {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bookDesSection {
+  margin-left: 50px;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  article {
+    @include body1(left, 22px, $dark-color);
+    text-align: justify;
+    font-weight: 400;
+  }
+}
+.bookDes{
+    h6 {
+        @include headline6(left);
+        margin: 0px 0px 10px 0px;
+      }
+      header {
+        @include headline4(left);
+        font-weight: 700;
+        margin-bottom: 50px;
+      }
+}
+.bookSection {
+  display: flex;
+  flex-direction: row;
+}
+.actionSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0px 50px 0px;
+  text {
+    @include subtitle1(right);
+    max-width: 150px;
+  }
+}
+.basicButton {
+  @include basicButton();
+}
+.basicButton-label {
+  @include button(center);
+}
+.button {
+  @include roundButton();
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.button-label {
+  color: $darkgray-color;
+  width: 20px;
+}
+.bookcrossingSection {
+  display: flex;
+  align-items: center;
+  h6 {
+    @include headline6(right);
+    margin: 0px;
+    text-transform: uppercase;
+  }
+}
+.ratingSection {
+  width: 50%;
+  h6 {
+    @include headline6(left);
+    margin: 0px;
+    text-transform: uppercase;
+  }
+}
+.bookcrossingSectionDes {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.ratingStarsSection {
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 20px;
+  }
+}
