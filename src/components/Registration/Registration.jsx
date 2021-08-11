@@ -1,5 +1,5 @@
 import React from "react";
-import "./RegistrationPage.scss";
+import "./Registration.scss";
 import Button from '@material-ui/core/Button';
 import girlWithBooks from "./assets/girl-book1.png";
 import googleIcon from "./assets/google-brands.svg";
@@ -8,9 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const RegistrationPage = (props) => {
+const Registration = (props) => {
     return (
-        <section className="registrationPage">
+        <section className="registration">
             <section className="bacgroundContainer">
             </section>
             <section className="regContainer imageSection">
@@ -75,4 +75,4 @@ i mam powyżej 18 lat." />
         </section>
   );
 };
-export default RegistrationPage;
+export default Registration;

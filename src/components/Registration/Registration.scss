@@ -1,6 +1,6 @@
 @import '../../variables/variables.scss';
 
-.registrationPage{
+.registration{
     @include containerStyle(100px 0px 100px 0px , row);
     background-color: $basic-color;
     z-index: 2;
@@ -26,7 +26,7 @@
     flex-direction: column;
     padding: 228px 0px 0px 80px;
     h6{
-        @include body1(center);
+        @include body1(center, 32px,$dark-color);
         margin: 20px 0px 20px 0px;
     }
     // button{

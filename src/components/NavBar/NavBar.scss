@@ -12,6 +12,7 @@ overflow: hidden;
 position: fixed;
 z-index: 100;
 border: 1px solid $gray-color;
+justify-content: space-between;
 }
 .logoContainer{
     width: 40%;
@@ -22,7 +23,6 @@ border: 1px solid $gray-color;
         }
 }
 .navContainer{
-  width: 30%;
   display: flex;
   button{
       border:none;

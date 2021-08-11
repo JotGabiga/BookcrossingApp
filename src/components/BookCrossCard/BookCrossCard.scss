@@ -27,7 +27,7 @@ img{
     h4 { @include headline6(left);
     }
 
-    h5 { @include body1(left);
+    h5 { @include body1(left, 32px, $dark-color);
     }
 
     h6 { @include body2(left);
