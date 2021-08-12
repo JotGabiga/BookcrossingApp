@@ -11,12 +11,12 @@ $basicDarker-filter: invert(95%) sepia(8%) saturate(513%) hue-rotate(323deg)
   brightness(92%) contrast(92%);
 $darkgray-filter: invert(32%) sepia(1%) saturate(0%) hue-rotate(73deg)
   brightness(96%) contrast(91%);
+
 // FONTS
 $header-font-family: "Yeseva One", serif;
 $text-font-family: "Roboto", sans-serif;
 
 // TEXT
-
 @mixin logo() {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
@@ -71,7 +71,6 @@ $text-font-family: "Roboto", sans-serif;
   font-size: 16px;
   text-align: $text-align;
   color: $color;
-  // letter-spacing: 0.05em;
   line-height: $line-height;
   font-weight: 400;
 }
@@ -144,24 +143,16 @@ $text-font-family: "Roboto", sans-serif;
   height: 36px;
   border: none;
 }
-
-// MAIN CONTAINER STYLES
-@mixin containerStyle($padding, $flex-direction) {
-  padding: $padding;
-  margin: 0px 20% 0px 20%;
-  display: flex;
-  flex-direction: $flex-direction;
-}
 @mixin basicButton() {
-  margin: 40px 40px 40px 0px;
-  background: $accent-color;
+  margin: 0px 0px 0px 0px;
+  background: $accentDarker-color;
   border-radius: 5px;
   width: 180px;
   height: 42px;
   border: none;
   color: $dark-color;
   &:hover {
-    background-color: $accentDarker-color;
+    background-color: $accent-color;
   }
 }
 @mixin roundButton() {
@@ -172,9 +163,36 @@ $text-font-family: "Roboto", sans-serif;
   height: 50px;
   border: none;
   text-transform: inherit;
-  padding:0px;
+  padding: 0px;
+  filter: $darkgray-filter;
   &:hover {
     background-color: $accent-color;
     cursor: pointer;
   }
+}
+
+// MAIN CONTAINER STYLES
+@mixin containerStyle($padding, $flex-direction) {
+  padding: $padding;
+  margin: 0px 20% 0px 20%;
+  display: flex;
+  flex-direction: $flex-direction;
+}
+@mixin bacgroundContainer() {
+  padding-top: 50px;
+  background-color: $white-color;
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+// FORM INPUT
+@mixin textField() {
+  background-color: $white-color;
+  border-radius: 30px;
+  width: 100%;
+  margin-bottom: 25px;
 }

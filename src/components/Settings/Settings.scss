@@ -1,0 +1,83 @@
+@import "../../variables/variables.scss";
+
+.settings {
+  @include containerStyle(50px 0px 100px 0px, row);
+}
+.bacgroundContainer {
+  @include bacgroundContainer();
+}
+.profileImageSection {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  z-index: 2;
+  text {
+    @include body1(center, 19px, $dark-color);
+    margin-top: 20px;
+    max-width: 100px;
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      color: $accentDarker-color;
+    }
+  }
+}
+.profileImageContainer {
+  width: 190px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-color;
+  border-radius: 50%;
+  img {
+    height: 100px;
+    filter: $darkgray-filter;
+  }
+}
+.formSection {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 105px 0px 0px 80px;
+  z-index: 2;
+  h3,
+  text {
+    margin: 0px 0px 30px 20px;
+  }
+  h3 {
+    @include headline3(left);
+  }
+  text {
+    @include body1(left, 19px, $dark-color);
+  }
+  h6 {
+    @include headline6(left);
+    font-weight: 700;
+    margin: 0px 0px 10px 20px;
+  }
+}
+.MuiInputBase-root {
+  @include textField();
+}
+.accountChangesSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.submmitSection {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+// BUTTON
+.basicButton {
+  @include basicButton();
+}
+.basicButton-label {
+  @include button(center);
+}
