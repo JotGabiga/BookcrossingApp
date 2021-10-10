@@ -1,6 +1,5 @@
 import React from "react";
 import "./BookCrossCard.scss";
-// import bookCover from "./assets/book-cover.jpg";
 import RatingStar from "../RatingStar/RatingStar";
 import { Link } from "react-router-dom";
 
