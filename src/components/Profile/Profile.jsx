@@ -1,10 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 import profile from "./assets/profile-photo.png";
 import plus from "./assets/plus-solid.svg";
 import settings from "./assets/cog-solid.svg";
+import axios from "axios";
+import BookCrossCard from "../BookCrossCard/BookCrossCard";
 
 const Profile = (props) => {
+  
+  const [isLoading, setLoading] = useState(true);
+  const [user, setUser]= useState({})
+  const [readBooks, setReadBooks]= useState([])
+ 
+  useEffect(()=>{
+    axios.get(`https://bookcrossing-api.herokuapp.com/user`)
+    .then( res => {
+      console.log(res.data)
+      setUser(res.data);
+      setLoading(false);
+      return res.data._id
+    })
+    .then (userId => 
+      axios.get(`https://bookcrossing-api.herokuapp.com/user/${userId}/readBooks`)
+    .then(res => {
+      setReadBooks(res.data);
+      setLoading(false);
+      console.log(res.data);
+    }))
+    .catch(err => {
+      console.log(err)
+    })
+  },[]);
+
+  if(isLoading){
+    return <div>Loading...</div>
+  }
+
+  const changeBookshelve = (bookshelve) => {
+    axios.get  (`https://bookcrossing-api.herokuapp.com/user/${user._id}/${bookshelve}`)
+    .then(res => {
+      setReadBooks(res.data);
+      setLoading(false);
+      console.log(res.data);
+  })
+     }
+  const declineWord = (value) => {
+    if (value === 1){
+      return "książka"
+    }
+    if (value <= 4 && value != 0){
+      return "książki"
+    } 
+  return "książek"
+  } 
+
+
   return (
     <section className="profile">
       <section className="photoSection">
@@ -12,10 +62,8 @@ const Profile = (props) => {
         <section className="innerSection ">
           <section className="photoContainer">
             <img src={profile} alt="profile" />
-            <h5>Jona Doe</h5>
+            <h5>{user.fullName}</h5>
             <section className="followersSection">
-            <h6>12 Obserwujących</h6>
-            <h6>200 Obserwowanych</h6>
             </section>
           </section>
         </section>
@@ -32,23 +80,26 @@ const Profile = (props) => {
       </section>
       <section className="categoriesSection">
         <section className="categories">
-          <section className="categoriesHeader">Chce przczytać</section>
-          <section className="categoriesDes">12 książek</section>
+          <section className="categoriesHeader"onClick={()=>changeBookshelve("wantToRead")}>Chce przczytać</section>
+          <section className="categoriesDes">{user.wantToRead.length} {declineWord(user.wantToRead.length)}</section>
         </section>
         <section className="categories">
-          <section className="categoriesHeader">Czytam</section>
-          <section className="categoriesDes">12 książek</section>
+          <section className="categoriesHeader"onClick={()=>changeBookshelve("currentlyReadBooks")}>Czytam</section>
+          <section className="categoriesDes">{user.currentlyReadBooks.length} {declineWord(user.currentlyReadBooks.length)}</section>
         </section>
         <section className="categories">
-          <section className="categoriesHeader">Przeczytane</section>
-          <section className="categoriesDes">12 książek</section>
+          <section className="categoriesHeader" onClick={()=>changeBookshelve("readBooks")}>Przeczytane</section>
+          <section className="categoriesDes">{user.readBooks.length} {declineWord(user.readBooks.length)}</section>
         </section>
         <section className="categories">
-          <section className="categoriesHeader">Bookcrosing</section>
-          <section className="categoriesDes">12 książek</section>
+          <section className="categoriesHeader"onClick={()=>changeBookshelve("bookcrossing")}>Bookcrosing</section>
+          <section className="categoriesDes">{user.bookcrossing.length} {declineWord(user.bookcrossing.length)}</section>
         </section>
       </section>
-      <section className="booksSection"></section>
+      <section className="booksSection">
+      {/* {user.map((users)=>(users.readBooks))} */}
+      {readBooks.map(readBook=>{return <BookCrossCard bookProps={readBook}/>})}   
+      </section>
     </section>
   );
 };

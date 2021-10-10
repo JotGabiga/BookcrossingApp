@@ -2,6 +2,7 @@
 
 .settings {
   @include containerStyle(50px 0px 100px 0px, row);
+  
 }
 .bacgroundContainer {
   @include bacgroundContainer();
@@ -68,6 +69,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  div{
+    width:90%;
+  }
 }
 .submmitSection {
   margin-top: 80px;

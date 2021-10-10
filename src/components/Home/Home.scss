@@ -2,9 +2,9 @@
 .home{
     @include containerStyle(50px 0px 50px 0px, column)
 }
-.bacgroundContainer{
+.backgroundContainer{
     padding-top:50px;
-    background-color: $basicDarker-color;
+    background-color: $dark-color;
     height: 720px;
     width: 100%;
     position: absolute;
@@ -22,11 +22,11 @@
     z-index: 2;
     padding:250px 0px 20px 30%;
     h1{
-        @include headline1(right);
+        @include headline1(right,$basic-color );
         margin:30px 0px 30px 0px
     }
     article{
-        @include body1(right, 32px, $dark-color);
+        @include body1(right, 32px, $basic-color);
     }
 }
 .filtrSection{

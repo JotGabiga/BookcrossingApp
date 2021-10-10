@@ -11,6 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  img{
+    height:auto;
+  }
 }
 .bookDesSection {
   margin-left: 50px;
@@ -21,6 +24,7 @@
     @include body1(left, 22px, $dark-color);
     text-align: justify;
     font-weight: 400;
+    margin-bottom: 40px;
   }
 }
 .bookDes{
@@ -93,4 +97,18 @@
   img {
     width: 20px;
   }
+}
+.commentInputSection{
+display: flex;
+flex-direction: row;
+}
+.MuiInputBase-root{
+  background-color: rgba(255, 255, 255, 0);
+  width:100%;
+}
+.profileDiv{
+  width: 20px ;
+  height: 20px;
+  border-radius: 10px;
+  background-color:$gray-color ;
 }

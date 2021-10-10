@@ -69,4 +69,5 @@ const Settings = (props) => {
     </section>
   );
 };
+
 export default Settings;

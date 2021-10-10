@@ -1,41 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BookPage.scss";
 import bookCover from "./assets/book-cover.jpg";
 import bookcrossing from "./assets/bookcrossing.png";
 import Button from "@material-ui/core/Button";
 import { StylesProvider } from "@material-ui/core/styles";
 import ratingStar from "./assets/star-solid.svg";
+import TextField from "@material-ui/core/TextField";
+import RatingStars from "../RatingStars/RatingStars";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
+
+
 
 const BookPage = (props) => {
+  const {id} = useParams();
+  const [isLoading, setLoading] = useState(true);
+  const [book, setBook] = useState({})
+  
+  useEffect(()=>{
+    axios.get(`https://bookcrossing-api.herokuapp.com/books/${id}`)
+    .then( res => {
+      // console.log(res.data)
+      setBook(res.data);
+      setLoading(false);
+    })
+    .catch(err => {
+      // console.log(err)
+    })
+  },[]);
+
+  if(isLoading){
+    return <div>Loading...</div>
+  }
+
+  function printElements(array) { 
+    return array.join(', '); 
+  }
+
   return (
     <section className="bookPage">
       <StylesProvider injectFirst>
         <section className="bookSection">
           <aside className="bookCoverSection">
-            <img src={bookCover} alt="book cover"></img>
+            <img src={book.cover} alt="book cover"></img>
           </aside>
           <section className="bookDesSection">
-              <section className="bookDes">
-            <header>Pułapki myślenia. O myśleniu szybkim i wolnym</header>
-            <h6>Daniel Kahneman</h6>
-            <h6>nauki społeczne</h6>
+            <section className="bookDes">
+              <header>{book.title}</header>
+              <h6>{printElements(book.authors)}</h6>
+              <h6>{printElements(book.tags)}</h6>
             </section>
             <section className="actionSection">
               <div className="ratingSection">
                 <h6>Oceń książkę</h6>
                 <div className="ratingStarsSection">
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
-                  <img src={ratingStar} alt="rating star" />
+                  <RatingStars votes={book.votes}></RatingStars>
                 </div>
-                <text>Ocena 8,9/10</text>
+                <text>Ocena: {book.rating} /10
+                </text>
               </div>
               <section className="bookcrossingSection">
                 <Button
@@ -51,22 +74,7 @@ const BookPage = (props) => {
               </section>
             </section>
             <article>
-              Czy ludzie są świadomymi i autonomicznymi autorami własnych
-              wyborów i osądów? Czy mogą ufać własnemu myśleniu, zwłaszcza temu
-              szybkiemu – intuicyjnemu i emocjonalnemu? Rozważniej jest na pewno
-              zdać się na myślenie wolne, analityczne. A mimo to trudno uniknąć
-              pułapek myślenia. Przytrafia się to nawet ekonomistom i nie
-              sprzyja podejmowaniu trafnych decyzji… W tej odkrywczej książce
-              Daniel Kahneman, psycholog, laureat Nagrody Nobla w dziedzinie
-              ekonomii, rozważa te zagadnienia i daje istotny wgląd w mechanizmy
-              ludzkiego myślenia. Jest to książka przełomowa. Kahneman objaśnia
-              nam działanie umysłu i opisuje, jak o naszym myśleniu wspólnie
-              decydują dwa systemy: System 1 – szybki, intuicyjny i emocjonalny
-              oraz System 2 – wolniejszy, działający w sposób bardziej
-              przemyślany i logiczny. Kahneman odkrywa przed nami niezwykłe
-              możliwości – ale też błędy i usterki – szybkiego myślenia,
-              wskazując wszechogarniający wpływ intuicyjnych wrażeń na nasze
-              myśli i zachowania.
+            {book.description}
             </article>
             <Button
               classes={{ root: "basicButton", label: "basicButton-label" }}
@@ -77,9 +85,18 @@ const BookPage = (props) => {
           </section>
         </section>
       </StylesProvider>
-      <section className="commentSection"></section>
+      <section className="commentSection">
+        <section>
+          <section className="commentInputSection">
+            <div className="profileDiv"></div>
+            <form noValidate autoComplete="off">
+              <TextField id="standard-basic" label="Dodaj komentarz" />
+            </form>
+          </section>
+          <section className="commentInputSection"></section>
+        </section>
+      </section>
     </section>
   );
-};
-
+  }
 export default BookPage;

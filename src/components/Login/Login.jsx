@@ -1,5 +1,5 @@
 import React from "react";
-import "./Registration.scss";
+import "./Login.scss";
 import Button from "@material-ui/core/Button";
 import girlWithBooks from "./assets/girl-book1.png";
 import googleIcon from "./assets/google-brands.svg";
@@ -8,7 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-const Registration = (props) => {
+const Login = (props) => {
   return (
     <section className="registration">
       <section className="bacgroundContainer"></section>

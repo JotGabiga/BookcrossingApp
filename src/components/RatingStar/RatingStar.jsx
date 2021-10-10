@@ -6,7 +6,7 @@ const RatingStar = (props) => {
     return (
         <section className="ratingStar">
            <img src={ratingStar} alt="rating star"></img>
-           <text>7/1</text>
+           <text>{props.ratingProps.rating}</text>
         </section>
   );
 };

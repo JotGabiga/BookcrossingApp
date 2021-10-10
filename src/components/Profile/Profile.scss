@@ -1,7 +1,7 @@
 @import '../../variables/variables.scss';
 
 .profile {
-    @include containerStyle(100px 0px 100px 0px , column);
+    @include containerStyle(100px 0px 100px 0px, column);
 }
 .photoSection {
     width:100%;
@@ -86,6 +86,9 @@
 .categoriesDes{
     @include body1(center, 19px, $darkgray-color);
 }
-
+.booksSection{
+    height:1200px;
+    background-color: khaki;
+}
     
 

@@ -4,6 +4,7 @@ import instagram from "./assets/instagram-brands.svg";
 import facebook from "./assets/facebook-square-brands.svg";
 import twitter from "./assets/twitter-square-brands.svg";
 
+
 const Footer = (props) => {
     return (
         <section className="footer">

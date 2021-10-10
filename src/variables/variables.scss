@@ -20,7 +20,7 @@ $text-font-family: "Roboto", sans-serif;
 @mixin logo() {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 2.3vh;
+  font-size: 16px;
   letter-spacing: 0.16em;
   color: $dark-color;
   text-transform: uppercase;
@@ -28,11 +28,11 @@ $text-font-family: "Roboto", sans-serif;
     cursor: pointer;
   }
 }
-@mixin headline1($text-align) {
+@mixin headline1($text-align, $color) {
   font-family: "Yeseva One";
   font-size: 76px;
   text-align: $text-align;
-  color: $dark-color;
+  color: $color;
   font-weight: 400;
 }
 @mixin headline2($text-align) {
