@@ -26,18 +26,15 @@ const NavBar = (props) => {
           <li>
             <Link to="/" onClick={handleClose}>Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/settings"onClick={handleClose}>Ustawienia</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/registration"onClick={handleClose}>Załóż konto</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/yourprofile"onClick={handleClose}>Twoje konto</Link>
-          </li>
-          <li>
-            <Link to="/bookpage"onClick={handleClose}>Książka</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
@@ -58,13 +55,16 @@ const NavBar = (props) => {
         </Modal>
       </div>
       <div className="logoContainer">
-        <h1>Bookstagram</h1>
+     <Link to="/">
+          <h1>Bookstagram</h1>
+          </Link>
       </div>
       <div className="navContainer rightContainer">
+      <Link to="/yourprofile"onClick={handleClose}>
         <div className="userIcon">
-        <Link to="/yourprofile"onClick={handleClose}><img src={userIcon} alt="user icon"></img></Link>
-          
+        <img src={userIcon} alt="user icon"></img>   
         </div>
+        </Link>
       </div>
     </section>
   );
