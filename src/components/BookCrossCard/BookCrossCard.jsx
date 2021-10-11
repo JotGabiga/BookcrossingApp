@@ -8,14 +8,19 @@ import { Link } from "react-router-dom";
 
 const BookCrossCard = (props) => {
     return (
-        <Link to ={`/bookpage/${props.bookProps._id}`}>
+        
         <section className="bookCrossCard">
+            
            <section className="bookCoverSection">
+           <Link to ={`/bookpage/${props.bookProps._id}`}>
                 <img src={props.bookProps.cover} alt="book cover"></img>
+                </Link>  
            </section>
            <section className="bookDesSection">
                <section className="titleSec">
+               <Link to ={`/bookpage/${props.bookProps._id}`}>
                <h4>{props.bookProps.title}</h4>
+               </Link>
                 <h5>{props.bookProps.authors}</h5>
                </section>
                 <section className="buttonsSec">
@@ -23,8 +28,9 @@ const BookCrossCard = (props) => {
                     <RatingStar ratingProps={props.bookProps.rating}></RatingStar>
                 </section>
             </section>
+           
         </section>
-        </Link>
+       
   );
 };
 export default BookCrossCard;
