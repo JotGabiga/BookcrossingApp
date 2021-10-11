@@ -42,7 +42,7 @@ const BookPage = (props) => {
     <section className="bookPage">
       <StylesProvider injectFirst>
         <section className="bookSection">
-          <aside className="bookCoverSection">
+          <aside className="bookCoverSec">
             <img src={book.cover} alt="book cover"></img>
           </aside>
           <section className="bookDesSection">
