@@ -5,6 +5,7 @@ import plus from "./assets/plus-solid.svg";
 import settings from "./assets/cog-solid.svg";
 import axios from "axios";
 import BookCrossCard from "../BookCrossCard/BookCrossCard";
+import { Link } from "react-router-dom";
 
 const Profile = (props) => {
   
@@ -73,7 +74,9 @@ const Profile = (props) => {
               <img src={plus} alt="add item" />
             </button>
             <button>
-              <img src={settings} alt="settings" />
+              <Link to="/settings">
+                <img src={settings} alt="settings" />
+              </Link>
             </button>
           </section>
         </section>
