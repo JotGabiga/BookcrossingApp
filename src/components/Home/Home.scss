@@ -36,7 +36,6 @@
     button{
         @include filterButton();
         z-index: 2;
-        margin: 0px 10px 0px 10px;
     }
 }
 .booksSection{
