@@ -30,7 +30,7 @@ img{
     h5 { @include body1(left, 32px, $dark-color);
     }
 
-    h6 { @include body2(left);
+    h6 { @include body2(left, $dark-color);
     }
 }
 .titleSec{

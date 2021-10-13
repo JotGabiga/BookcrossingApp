@@ -13,6 +13,7 @@ const Home = (props) => {
     const [tag, setTag] = useState({})
     const [tags, setTags]= useState([])
     const [books, setBooks] = useState([])
+    // const [isActiveTag, setActiveTag] = useState(false)
     useEffect(()=>{
       axios.get(`https://bookcrossing-api.herokuapp.com/tags`)
       .then( res => {
@@ -46,14 +47,16 @@ const Home = (props) => {
 // selectedtags do state
 
 
-  const handleButtonClicked = ev => {
+  const filterBooksByTag = ev => {
     axios.get  (`https://bookcrossing-api.herokuapp.com/books?tags=${ev.currentTarget.value}`)
+    
     .then(res => {
       setBooks(res.data);
       setLoading(false);
       console.log(res.data);
   })
      }
+
     
     return (
         <section className="home">
@@ -68,16 +71,16 @@ const Home = (props) => {
                     </article>
                 </div>
                 <section className="filtrSection">
-                {tags.map(tag=>{return <button key={tag} value={tag} onClick={handleButtonClicked}>{tag}</button>})}   
-                  
+                {tags.map(tag=>{return <div className="radio-toolbar">
+                    <input key={tag} value={tag} type= "radio" name="tag" id={tag} onChange={filterBooksByTag}/>
+                    <label for={tag}>{tag}</label>
+                  </div>})}  
                 </section>
             </section>
             <section className="booksSection">
             {books.map(book=>{return <BookCrossCard bookProps={book}/>})}   
             </section>
         </section>
-
-        
   );
 };
 
