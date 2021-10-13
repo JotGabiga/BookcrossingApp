@@ -33,10 +33,9 @@
     padding: 20px 0px 70px 0px;
     display: flex;
     justify-content: flex-end;
-    button{
-        @include filterButton();
-        z-index: 2;
-    }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
 }
 .booksSection{
     z-index: 2;
@@ -47,3 +46,25 @@
     width:100%;
     height:100%;
 }
+.radio-toolbar {
+    margin: 10px 0px 10px 0px;
+}
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .radio-toolbar label {
+    @include filterButton();
+        // z-index: 2;
+}
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:$accent-color;
+    font-weight: bold;
+}
+    .radio-toolbar label:hover {
+        background: $basicDarker-color;
+        cursor: pointer;
+        color: $dark-color;
+        border: none;
+      }

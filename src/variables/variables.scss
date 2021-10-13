@@ -72,13 +72,12 @@ $text-font-family: "Roboto", sans-serif;
   text-align: $text-align;
   color: $color;
   line-height: $line-height;
-  font-weight: 400;
 }
-@mixin body2($text-align) {
+@mixin body2($text-align, $color) {
   font-family: "Roboto";
   font-size: 14px;
   text-align: $text-align;
-  color: $dark-color;
+  color: $color;
   font-weight: 400;
 }
 @mixin subtitle1($text-align) {
@@ -102,11 +101,11 @@ $text-font-family: "Roboto", sans-serif;
   text-align: $text-align;
   color: $dark-color;
 }
-@mixin overline($text-align) {
+@mixin overline($text-align,$color) {
   font-family: "Roboto";
   font-size: 10px;
   text-align: $text-align;
-  color: $dark-color;
+  color: $color;
 }
 @mixin caption($text-align) {
   font-family: "Roboto";
@@ -118,8 +117,7 @@ $text-font-family: "Roboto", sans-serif;
 
 @mixin filterButton() {
   @include button(center);
-  padding: 0px 10px 0px 10px;
-  margin: 0px 5px 0px 5px;
+  padding: 10px 10px 10px 10px;
   white-space: nowrap;
   width: 100%;
   height: 34px;
@@ -131,12 +129,12 @@ $text-font-family: "Roboto", sans-serif;
   font-size: 1.5vh;
   font-weight: 500;
   color: $dark-color;
-  &:hover {
-    background: $accent-color;
-    cursor: pointer;
-    color: $dark-color;
-    border: none;
-  }
+  // &:hover {
+  //   background: $accent-color;
+  //   cursor: pointer;
+  //   color: $dark-color;
+  //   border: none;
+  // }
 }
 @mixin grayButton() {
   @include button(center);

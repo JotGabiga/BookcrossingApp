@@ -4,7 +4,8 @@
 }
 .commentSection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin:25px 0px 25px 0px;
 }
 .bookCoverSec {
   width: 35%;
@@ -15,7 +16,7 @@
     height:auto;
   }
 }
-.bookDesSection {
+.bookDesSec {
   margin-left: 50px;
   width: 65%;
   display: flex;
@@ -99,16 +100,32 @@
   }
 }
 .commentInputSection{
-display: flex;
+
 flex-direction: row;
+width: 65%;
+margin-left:50px;
 }
 .MuiInputBase-root{
   background-color: rgba(255, 255, 255, 0);
   width:100%;
 }
 .profileDiv{
-  width: 20px ;
-  height: 20px;
-  border-radius: 10px;
-  background-color:$gray-color ;
+  width: 35%;
+}
+.checkboxSec {
+  width: 100%;
+  display: flex;
+justify-content: space-between;
+  margin-bottom: 30px;
+  // REMOVE REDUNDANT 
+  button{
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #191919;
+  }
 }
