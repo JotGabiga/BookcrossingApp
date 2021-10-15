@@ -57,7 +57,7 @@ const BookPage = (props) => {
                 <div className="ratingStarsSection">
                   <RatingStars votes={book.votes}></RatingStars>
                 </div>
-                <text>Ocena: {book.rating} /10</text>
+                <text>Ocena: {book.rating || 0} /10</text>
               </div>
               <section className="bookcrossingSection">
                 <Button

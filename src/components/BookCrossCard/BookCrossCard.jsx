@@ -25,7 +25,7 @@ const BookCrossCard = (props) => {
                </section>
                 <section className="buttonsSec">
                     <button>Wymień się</button>
-                    <RatingStar ratingProps={props.bookProps.rating}></RatingStar>
+                    <RatingStar ratingProps={props.bookProps.rating || 0}></RatingStar>
                 </section>
             </section>
            
