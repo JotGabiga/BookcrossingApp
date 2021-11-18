@@ -1,15 +1,14 @@
 @import '../../variables/variables.scss';
 .ratingStar{
-    width:45px;
-    height:45px;
-    border-radius: 50%;
-    background: $gray-color;
+    // width:45px;
+    // height:45px;
+    // border-radius: 50%;
+    // background: $gray-color;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
     img{
         height:15px;
+        padding: 3px 10px 0px 0px;
     }
     text{
     

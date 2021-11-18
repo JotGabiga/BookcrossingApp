@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./BookPage.scss";
-import bookCover from "./assets/book-cover.jpg";
-import bookcrossing from "./assets/bookcrossing.png";
 import Button from "@material-ui/core/Button";
 import { StylesProvider } from "@material-ui/core/styles";
-import ratingStar from "./assets/star-solid.svg";
-import TextField from "@material-ui/core/TextField";
 import RatingStars from "../RatingStars/RatingStars";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+import Comments from "../Comments/Comments";
+
 
 const BookPage = (props) => {
   const { id } = useParams();
@@ -21,14 +17,12 @@ const BookPage = (props) => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/books/${id}`)
       .then((res) => {
-        // console.log(res.data)
         setBook(res.data);
         setLoading(false);
       })
       .catch((err) => {
-        // console.log(err)
       });
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -37,7 +31,8 @@ const BookPage = (props) => {
   function printElements(array) {
     return array.join(", ");
   }
-
+  
+ 
   return (
     <section className="bookPage">
       <StylesProvider injectFirst>
@@ -52,24 +47,14 @@ const BookPage = (props) => {
               <h6>{printElements(book.tags)}</h6>
             </section>
             <section className="actionSection">
-              <div className="ratingSection">
+              <div className="rateSection">
                 <h6>Oceń książkę</h6>
                 <div className="ratingStarsSection">
                   <RatingStars votes={book.votes}></RatingStars>
                 </div>
-                <text>Ocena: {book.rating || 0} /10</text>
+                <section>Ocena: {book.rating || 0} /10</section>
               </div>
               <section className="bookcrossingSection">
-                <Button
-                  classes={{ root: "button", label: "button-label" }}
-                  variant="contained"
-                >
-                  <img src={bookcrossing} alt="bookcrossing" />
-                </Button>
-                <section className="bookcrossingSectionDes">
-                  <h6>Bookcrossing</h6>
-                  <text>27 użytkowników chcę wymienić tę ksiązkę </text>
-                </section>
               </section>
             </section>
             <article>{book.description}</article>
@@ -81,45 +66,11 @@ const BookPage = (props) => {
             </Button>
           </section>
         </section>
-        <section className="commentSection">
-
-        <div className="profileDiv"></div>
-
-
-        
-            <section className="commentInputSection">
-             
-              <form noValidate autoComplete="off">
-                <TextField
-                  style={{
-                    width: "100%",
-                  }}
-                  label="Dodaj komentarz"
-                />
-              </form>
-              <section className="checkboxSec">
-            <FormControlLabel
-              control={<Checkbox name="checkedC" />}
-              label="Uwaga Spoiler! Ten temat może zawierać treści zdradzające fabułę."
-            />
-            <button>
-              Usuń
-            </button>
-             <Button
-              classes={{ root: "basicButton", label: "basicButton-label" }}
-              variant="contained"
-            >
-              Dodaj
-            </Button>
+        <section className="commentsSection">
+          <div className="profileDiv"></div>
+          <section className="commentSection">
+            <Comments comments={book.comments}></Comments>
           </section>
-            </section>
-            
-         
-
-
-
-
-
         </section>
       </StylesProvider>
     </section>

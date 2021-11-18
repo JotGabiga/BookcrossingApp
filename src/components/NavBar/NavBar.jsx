@@ -24,13 +24,13 @@ const NavBar = (props) => {
       <div className="navSec">
         <ul>
           <li>
-            <Link to="/" onClick={handleClose}>Home</Link>
+            <Link key={Math.random().toString(36).substr(2, 9)} to="/" onClick={handleClose}>Home</Link>
           </li>
           {/* <li>
             <Link to="/settings"onClick={handleClose}>Ustawienia</Link>
           </li> */}
           <li>
-            <Link to="/registration"onClick={handleClose}>Załóż konto</Link>
+            <Link key={Math.random().toString(36).substr(2, 9)} to="/registration"onClick={handleClose}>Załóż konto</Link>
           </li>
           {/* <li>
             <Link to="/yourprofile"onClick={handleClose}>Twoje konto</Link>
@@ -55,7 +55,7 @@ const NavBar = (props) => {
         </Modal>
       </div>
       <div className="logoContainer">
-     <Link to="/">
+     <Link style={{ textDecoration: 'none'}} to="/">
           <h1>Bookstagram</h1>
           </Link>
       </div>

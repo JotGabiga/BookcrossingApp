@@ -13,14 +13,14 @@ const Settings = (props) => {
         <div className="profileImageContainer">
           <img src={profileImage} alt="profile"></img>
         </div>
-        <text>Ustaw zdjęcie profilowe</text>
+        <section>Ustaw zdjęcie profilowe</section>
       </aside>
       <section className="formSection">
         <StylesProvider injectFirst>
           <h3>Edytuj profil</h3>
-          <text>
+          <section>
             Osoby odwiedzające Twój profil zobaczą następujące informacje
-          </text>
+          </section>
           <h6>Imie i nazwisko</h6>
           <TextField id="outlined-helperText" label="" variant="outlined" />
           <h6>Nazwa profilu</h6>
@@ -28,10 +28,10 @@ const Settings = (props) => {
           <h6>Email</h6>
           <TextField id="outlined-helperText" label="" variant="outlined" />
           <h6>Zmiany na koncie</h6>
-          <text>
+          <section>
             Tutaj ustawisz preferencje logowania i dokonasz znaczących zmian na
             koncie
-          </text>
+          </section>
           <section className="accountChangesSection">
             <div>
               <h6>Hasło</h6>
@@ -47,7 +47,7 @@ const Settings = (props) => {
           <section className="accountChangesSection">
             <div>
               <h6>Usuń konto</h6>
-              <text>Usuń konto i jego dane</text>
+              <section>Usuń konto i jego dane</section>
             </div>
             <Button
               classes={{ root: "basicButton", label: "basicButton-label" }}

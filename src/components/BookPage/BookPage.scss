@@ -2,7 +2,7 @@
 .bookPage {
   @include containerStyle(100px 0px 100px 0px, column);
 }
-.commentSection {
+.commentsSection {
   display: flex;
   flex-direction: row;
   margin:25px 0px 25px 0px;
@@ -78,18 +78,13 @@
     text-transform: uppercase;
   }
 }
-.ratingSection {
+.rateSection {
   width: 50%;
   h6 {
     @include headline6(left);
     margin: 0px;
     text-transform: uppercase;
   }
-}
-.bookcrossingSectionDes {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
 }
 .ratingStarsSection {
   margin: 10px 0px 10px 0px;
@@ -99,14 +94,12 @@
     width: 20px;
   }
 }
-.commentInputSection{
-
+.commentSection{
 flex-direction: row;
 width: 65%;
 margin-left:50px;
 }
 .MuiInputBase-root{
-  background-color: rgba(255, 255, 255, 0);
   width:100%;
 }
 .profileDiv{

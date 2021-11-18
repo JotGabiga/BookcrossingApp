@@ -1,70 +1,103 @@
-@import '../../variables/variables.scss';
-.home{
-    @include containerStyle(50px 0px 50px 0px, column)
+@import "../../variables/variables.scss";
+.home {
+  @include containerStyle(50px 0px 50px 0px, column);
 }
-.backgroundContainer{
-    padding-top:50px;
-    background-color: $dark-color;
-    height: 720px;
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
+.backgroundContainer {
+  padding-top: 50px;
+  background-color: $basic-color;
+  height: 720px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
 }
-.searchSection{
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
+.searchSection {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.textSection{
-    z-index: 2;
-    padding:250px 0px 20px 30%;
-    h1{
-        @include headline1(right,$basic-color );
-        margin:30px 0px 30px 0px
-    }
-    article{
-        @include body1(right, 32px, $basic-color);
-    }
-}
-.filtrSection{
-    padding: 20px 0px 70px 0px;
-    display: flex;
-    justify-content: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.textSec {
+  //   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    @include headline3(center);
+    // margin: 30px 0px 30px 0px;
     
+  }
+  article {
+    @include headline5(center);
+    font-weight: 600;
+    // margin: 0px;
+    
+  }
 }
-.booksSection{
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    // display: table-row-group;
-    flex-wrap: wrap;
-    width:100%;
-    height:100%;
+.filtrSection {
+  padding: 20px 0px 70px 0px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.booksSection {
+  z-index: 2;
+  display: flex;
+  justify-content:space-between;
+
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 .radio-toolbar {
-    margin: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
 }
 .radio-toolbar input[type="radio"] {
-    opacity: 0;
-    position: fixed;
-    width: 0;
-  }
-  .radio-toolbar label {
-    @include filterButton();
-        // z-index: 2;
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+.radio-toolbar label {
+  @include filterButton();
+  // z-index: 2;
 }
 .radio-toolbar input[type="radio"]:checked + label {
-    background-color:$accent-color;
-    font-weight: bold;
+  background-color: #7d8f95;
+  font-weight: bold;
 }
-    .radio-toolbar label:hover {
-        background: $basicDarker-color;
-        cursor: pointer;
-        color: $dark-color;
-        border: none;
-      }
+.radio-toolbar label:hover {
+  background: $basicDarker-color;
+  cursor: pointer;
+  color: $dark-color;
+  border: none;
+}
+.welcomeSection {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  // padding: 50px 100px 0px 0px;
+  h1 {
+    @include headline3(center);
+    margin: 30px 0px 30px 0px;
+  }
+  article {
+    @include headline5(center);
+    margin: 0px;
+  }
+  img {
+    margin: 5% 5% 5% 0%;
+    width: 100%;
+    max-width: 500px;
+  }
+  input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid $gray-color;
+    border-radius: 22px;
+    padding:20px;
+    margin:40px;
+  }
+}
