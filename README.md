@@ -53,9 +53,11 @@ Builds the app for production to the build folder. It correctly bundles React in
 Bookcrossing App has for now three main functionalities: 
 #### Home page
 The home page displays all books. It has functionality of filtering by tags and dynamic search. Also API and React Infinite Scroll based pagination was used.
-
+##### Homepage
 ![Home page](./screenshots/homepage.png)
+##### Filtering
 ![Home page - filter by tag](./screenshots/homepage-filterbytag.png)
+##### Search
 ![Home page - search](./screenshots/homepage-search.png)
 
 #### Book page
@@ -76,12 +78,9 @@ Before implementation UI was first design with Figma.  -->
 <!-- ![Figma](figma.png) -->
 
 ## Project status
- -[x] User panel 
- -[x] Home page
- -[x] Book page 
- -[ ] Bookcross functionality  
- -[ ] Registration  
- -[ ] Login page 
+
+I plan to further develop the project. I am going to add features like Bookcross functionality, Registration and
+Login page.
 
 ## Demo
 ##### Here you can play with a demo of the front-end of [Bookcrossing app](https://bookcrossing-328121.web.app/).
