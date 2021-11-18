@@ -2,7 +2,7 @@ import React from "react";
 import "./Registration.scss";
 import Button from "@material-ui/core/Button";
 import girlWithBooks from "./assets/girl-book1.png";
-import googleIcon from "./assets/google-brands.svg";
+// import googleIcon from "./assets/google-brands.svg";
 import { StylesProvider } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -25,10 +25,10 @@ const Registration = (props) => {
           <Button
             classes={{ root: "googleButton", label: "googleButton-label" }}
             variant="contained">
-            <img src={googleIcon} alt="google icon"></img>
-            Załóż konto
+            {/* <img src={googleIcon} alt="google icon"></img> */}
+            Zaloguj się
           </Button>
-          <h6>lub</h6>
+          <h6>lub załóż konto</h6>
           <TextField
             classes={{ root: "input", label: "input-label" }}
             id="outlined-helperText"

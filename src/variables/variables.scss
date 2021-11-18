@@ -14,7 +14,7 @@ $darkgray-filter: invert(32%) sepia(1%) saturate(0%) hue-rotate(73deg)
 
 // FONTS
 $header-font-family: "Yeseva One", serif;
-$text-font-family: "Roboto", sans-serif;
+$text-font-family: "Lato", sans-serif;
 
 // TEXT
 @mixin logo() {
@@ -46,7 +46,7 @@ $text-font-family: "Roboto", sans-serif;
   font-family: "Yeseva One";
   font-size: 43px;
   text-align: $text-align;
-  color: $dark-color;
+  color: #191919d2;
 }
 @mixin headline4($text-align) {
   font-family: "Roboto";
@@ -61,20 +61,20 @@ $text-font-family: "Roboto", sans-serif;
   color: $dark-color;
 }
 @mixin headline6($text-align) {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-size: 18px;
   text-align: $text-align;
   color: $dark-color;
 }
 @mixin body1($text-align, $line-height, $color) {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-size: 16px;
   text-align: $text-align;
   color: $color;
   line-height: $line-height;
 }
 @mixin body2($text-align, $color) {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-size: 14px;
   text-align: $text-align;
   color: $color;
@@ -101,17 +101,17 @@ $text-font-family: "Roboto", sans-serif;
   text-align: $text-align;
   color: $dark-color;
 }
-@mixin overline($text-align,$color) {
+@mixin overline($text-align, $color) {
   font-family: "Roboto";
   font-size: 10px;
   text-align: $text-align;
   color: $color;
 }
-@mixin caption($text-align) {
+@mixin caption($text-align, $color) {
   font-family: "Roboto";
   font-size: 12px;
   text-align: $text-align;
-  color: $dark-color;
+  color: $color;
 }
 // BUTTONS
 
@@ -192,7 +192,6 @@ $text-font-family: "Roboto", sans-serif;
 
 // FORM INPUT
 @mixin textField() {
-  background-color: $white-color;
   border-radius: 30px;
   width: 100%;
   margin-bottom: 25px;

@@ -1,0 +1,41 @@
+@import "../../variables/variables.scss";
+.commentSec {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 20px 0px;
+}
+.commentUserName {
+  @include body1(left, 19px, $dark-color);
+  font-weight: bold;
+  
+}
+.commentDate {
+  @include caption(left, $darkgray-color);
+  margin: 5px 0px 5px 0px;
+}
+
+.commentActions{
+  @include  caption(left, $darkgray-color);
+  display: flex;
+}
+.commentActionsBtn{
+  margin-right: 15px;
+  &:hover{
+cursor: pointer;
+color:$dark-color;
+font-weight: 700;
+  }
+}
+.commentText {
+  @include  body2(left, $dark-color);
+  margin: 5px 0px 5px 0px;
+  text-align: justify;
+}
+.spoilerComment {
+  font-weight: 600;
+  color:$accentDarker-color;
+  &:hover{
+    cursor: pointer;
+    color: #92a9b1;
+  }
+}

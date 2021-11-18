@@ -28,7 +28,7 @@ const Footer = (props) => {
             </section>
            <section className="footerContainer menuContainer">
             <ul>
-              <li>Regulamin</li>
+              <li >Regulamin</li>
               <li>Polityka cookies</li>
               <li>Polityka prywatności</li>
               <li>Ustawienia cookies</li>

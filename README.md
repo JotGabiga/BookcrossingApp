@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. [General info](#installation)
+2. [Technologies](#example2)
+3. [Setup](#third-example)
+4. [Features](#features)
+5. [Project status](#projectstatus)
+5. [Demo](#demo)
+## General info
 
-## Available Scripts
+Bookcrossing App is prepared as MVP. The main purpose of the application is to manage user's home library and exchange books with friends.  
 
+App was created on educational purposes, mainly so that I could consolidate my knowledge of Back-end and Front-end technologies.
+
+## Technologies
+#### Front-end
+App was created using React.js with functional components and has been deployed on Firebase. 
+
+##### Used technologies:
+- React  17.0.2
+- Axios 
+- Firebase 9.1.1
+- Material UI
+#### Back-end
+Back-end project uses non relational database - Mongodb, and it's deployed on Heroku.
+The connection to the database is made in the backend application written in node.js
+which  allow to integrate with frontend by API.
+##### Used technologies:
+- Node.js
+- Mongoose
+- Mongodb
+- Heroku
+
+
+Link to [API repository.](https://github.com/JotGabiga/BookcrossingApp-api) 
+
+
+## Setup
 In the project directory, you can run:
+```bash
+npm run start
+```
+Runs the app in the development mode. 
+Open http://localhost:3000 to view it in the browser.
+The page will reload if you make edits. You will also see any lint errors in the console.           
 
-### `npm start`
+```bash
+npm run build
+```
+Builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
+Bookcrossing App has for now three main functionalities: 
+#### Home page
+The home page displays all books. It has functionality of filtering by tags and dynamic search. Also API and React Infinite Scroll based pagination was used.
+##### Homepage
+![Home page](./screenshots/homepage.png)
+##### Filtering
+![Home page - filter by tag](./screenshots/homepage-filterbytag.png)
+##### Search
+![Home page - search](./screenshots/homepage-search.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Book page
+Book page allows users to view books, read its description, add rate and post a comment. In the comment section there is opportunity to mark it as a spoiler. Comment mark as a spoiler could be read by click on the alert information.
 
-### `npm test`
+![Book page](./screenshots/bookpage.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### User page
+User page allows users to display books in their library, sorted by categories like read, want to read, currently reading and those to be replaced in bookcrossing initiative. 
 
-### `npm run build`
+![User page](./screenshots/userpage.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- The page is full Responsive. RWD was  introduced by adding CSS3 media queries, flexible images and elements sized in relative units. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Before implementation UI was first design with Figma.  -->
 
-### `npm run eject`
+<!-- ![Figma](figma.png) -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project status
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I plan to further develop the project. I am going to add features like Bookcross functionality, Registration and
+Login page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+##### Here you can play with a demo of the front-end of [Bookcrossing app](https://bookcrossing-328121.web.app/).

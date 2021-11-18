@@ -64,7 +64,7 @@
   }
 }
 .MuiFormControlLabel-label {
-  @include caption(left);
+  @include caption(left,$darkgray-color);
 }
 // BUTTON
 .basicButton {

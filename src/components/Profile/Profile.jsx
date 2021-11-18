@@ -17,7 +17,7 @@ const Profile = (props) => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/user`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setUser(res.data);
         setLoading(false);
         return res.data._id;
@@ -30,7 +30,7 @@ const Profile = (props) => {
           .then((res) => {
             setReadBooks(res.data);
             setLoading(false);
-            console.log(res.data);
+            // console.log(res.data);
           })
       )
       .catch((err) => {
@@ -51,7 +51,7 @@ const Profile = (props) => {
         setReadBooks(res.data);
         setSelectedBookshelve(bookshelve);
         setLoading(false);
-        console.log(res.data);
+        // console.log(res.data);
       });
   };
   const declineWord = (value) => {
@@ -96,7 +96,7 @@ const Profile = (props) => {
             checked={selectedBookshelve === "bookcrossing" }
             onChange={() => changeBookshelve("bookcrossing")}
           />
-          <label for="bookcrossing">
+          <label htmlFor="bookcrossing">
           <div>Bookcrosing</div>
             <section className="categoriesDes">
               {user.bookcrossing.length} {declineWord(user.bookcrossing.length)}
@@ -112,7 +112,7 @@ const Profile = (props) => {
             checked={selectedBookshelve === "wantToRead" }
             onChange={() => changeBookshelve("wantToRead")}
           />
-          <label for="wantToRead">
+          <label htmlFor="wantToRead">
             <div>Chce przczytać</div>
             <div className="categoriesDes">
               {user.wantToRead.length} {declineWord(user.wantToRead.length)}
@@ -128,7 +128,7 @@ const Profile = (props) => {
             checked={selectedBookshelve === "currentlyReadBooks" }
             onChange={() => changeBookshelve("currentlyReadBooks")}
           />
-          <label for="currentlyReadBooks">
+          <label htmlFor="currentlyReadBooks">
            <div>Czytam</div> 
             <section className="categoriesDes">
               {user.currentlyReadBooks.length}{" "}
@@ -145,7 +145,7 @@ const Profile = (props) => {
             checked={selectedBookshelve === "readBooks" }
             onChange={() => changeBookshelve("readBooks")}
           />
-          <label for="readBooks">
+          <label htmlFor="readBooks">
           <div>Przeczytane</div> 
             <section className="categoriesDes">
               {user.readBooks.length} {declineWord(user.readBooks.length)}
@@ -155,7 +155,9 @@ const Profile = (props) => {
       </section>
       <section className="booksSection">
         {readBooks.map((readBook) => {
-          return <BookCrossCard bookProps={readBook} />;
+          return <BookCrossCard 
+          key={readBook._id} 
+          bookProps={readBook} />;
         })}
       </section>
     </section>

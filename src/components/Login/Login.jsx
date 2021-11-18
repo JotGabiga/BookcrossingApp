@@ -10,65 +10,33 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 const Login = (props) => {
   return (
-    <section className="registration">
-      <section className="bacgroundContainer"></section>
-      <section className="regContainer imageSection">
-        <img src={girlWithBooks} alt="girl with books"></img>
-        <h1>Witaj na Bookstagramie</h1>
-        <article>
-          Znajdź książkowe inspiracje, twórz bibliotekę przeczytanych tytułów i
-          tych, które chcesz przeczytać, wymieniaj się książkami.
-        </article>
-      </section>
-      <section className="regContainer registrationFormSection">
-        <StylesProvider injectFirst>
-          <Button
-            classes={{ root: "googleButton", label: "googleButton-label" }}
-            variant="contained">
-            <img src={googleIcon} alt="google icon"></img>
-            Załóż konto
-          </Button>
-          <h6>lub</h6>
-          <TextField
-            classes={{ root: "input", label: "input-label" }}
-            id="outlined-helperText"
-            label="Imię i nazwisko"
-            variant="outlined"
-          />
-          <TextField
-            classes={{ root: "input", label: "input-label" }}
-            id="outlined-helperText"
-            label="Nazwa profilu"
-            variant="outlined"
-          />
-          <TextField
-            classes={{ root: "input", label: "input-label" }}
-            id="outlined-helperText"
-            label="Adres mail"
-            variant="outlined"
-          />
-          <TextField
-            classes={{ root: "input", label: "input-label" }}
-            id="outlined-helperText"
-            label="Hasło"
-            variant="outlined"
-          />
-          <section className="checkboxSection">
-            <FormControlLabel
-              control={<Checkbox name="checkedC" />}
-              label="Rejestrując się, potwierdzam, że akceptuję regulamin, przeczytałam/em politykę prywatności
-                    i mam powyżej 18 lat."
-            />
-          </section>
-          <Button
-            classes={{ root: "basicButton", label: "basicButton-label" }}
-            variant="contained"
-          >
-            Rejestracja
-          </Button>
-        </StylesProvider>
-      </section>
+    <section className="regContainer registrationFormSection">
+      <StylesProvider injectFirst>
+        <h2>Zaloguj się</h2>
+        <TextField
+          classes={{ root: "input", label: "input-label" }}
+          id="outlined-helperText"
+          label="Adres mail"
+          variant="outlined"
+        />
+        <TextField
+          classes={{ root: "input", label: "input-label" }}
+          id="outlined-helperText"
+          label="Hasło"
+          variant="outlined"
+        />
+        <h6>Nie pamiętasz hasła?</h6>
+        <section className="checkboxSection"></section>
+        <Button
+          classes={{ root: "basicButton", label: "basicButton-label" }}
+          variant="contained"
+        >
+          Zaloguj się
+        </Button>
+        <h6>Nie masz konta? Zarejestruj się</h6>
+      </StylesProvider>
     </section>
   );
 };
-export default Registration;
+
+export default Login;

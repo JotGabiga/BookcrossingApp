@@ -29,7 +29,7 @@
 }
 .sighn{
     h6{
-        @include caption(left);
+        @include caption(left,$darkgray-color);
         color:$basicDarker-color;
     }
 }

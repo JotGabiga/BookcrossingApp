@@ -1,0 +1,30 @@
+@import "../../variables/variables.scss";
+
+.registration {
+  @include containerStyle(50px 0px 100px 0px, row);
+  background-color: $basic-color;
+  z-index: 2;
+}
+.bacgroundContainer {
+  @include bacgroundContainer();
+}
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 100px 0px 0px;
+  h1 {
+    @include headline3(center);
+    margin:30px 0px 30px 0px;
+  }
+  article {
+    @include headline5(center);
+    margin:0px;
+  }
+  img {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+ 
