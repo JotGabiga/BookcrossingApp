@@ -17,7 +17,6 @@ const Profile = (props) => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/user`)
       .then((res) => {
-        // console.log(res.data);
         setUser(res.data);
         setLoading(false);
         return res.data._id;
@@ -30,7 +29,6 @@ const Profile = (props) => {
           .then((res) => {
             setReadBooks(res.data);
             setLoading(false);
-            // console.log(res.data);
           })
       )
       .catch((err) => {
@@ -51,7 +49,6 @@ const Profile = (props) => {
         setReadBooks(res.data);
         setSelectedBookshelve(bookshelve);
         setLoading(false);
-        // console.log(res.data);
       });
   };
   const declineWord = (value) => {
@@ -71,19 +68,19 @@ const Profile = (props) => {
         <section className="innerSection ">
           <section className="photoContainer">
             <img src={profile} alt="profile" />
-            <h5>{user.fullName}</h5>
+            <h3>{user.fullName}</h3>
           </section>
         </section>
         <section className="innerSection">
           <section className="iconContainer">
-            <button>
+            {/* <button>
               <img src={plus} alt="add item" />
             </button>
             <button>
               <Link to="/settings">
                 <img src={settings} alt="settings" />
               </Link>
-            </button>
+            </button> */}
           </section>
         </section>
       </section>
@@ -97,9 +94,11 @@ const Profile = (props) => {
             onChange={() => changeBookshelve("bookcrossing")}
           />
           <label htmlFor="bookcrossing">
-          <div>Bookcrosing</div>
+          <h4>Bookcrosing</h4>
             <section className="categoriesDes">
+              <h5>
               {user.bookcrossing.length} {declineWord(user.bookcrossing.length)}
+              </h5>
             </section>
           </label>
         </div>
@@ -113,9 +112,11 @@ const Profile = (props) => {
             onChange={() => changeBookshelve("wantToRead")}
           />
           <label htmlFor="wantToRead">
-            <div>Chce przczytać</div>
+            <h4>Chce przczytać</h4>
             <div className="categoriesDes">
+              <h5>
               {user.wantToRead.length} {declineWord(user.wantToRead.length)}
+              </h5>
             </div>
           </label>
         </div>
@@ -129,10 +130,12 @@ const Profile = (props) => {
             onChange={() => changeBookshelve("currentlyReadBooks")}
           />
           <label htmlFor="currentlyReadBooks">
-           <div>Czytam</div> 
+           <h4>Czytam</h4> 
             <section className="categoriesDes">
+              <h5>
               {user.currentlyReadBooks.length}{" "}
               {declineWord(user.currentlyReadBooks.length)}
+              </h5>
             </section>
           </label>
         </div>
@@ -146,19 +149,22 @@ const Profile = (props) => {
             onChange={() => changeBookshelve("readBooks")}
           />
           <label htmlFor="readBooks">
-          <div>Przeczytane</div> 
+          <h4>Przeczytane</h4> 
             <section className="categoriesDes">
+              <h5>
               {user.readBooks.length} {declineWord(user.readBooks.length)}
+              </h5>
             </section>
           </label>
         </div>
       </section>
       <section className="booksSection">
-        {readBooks.map((readBook) => {
-          return <BookCrossCard 
-          key={readBook._id} 
-          bookProps={readBook} />;
-        })}
+      {readBooks.map((readBook) => 
+      (<BookCrossCard key={readBook._id} 
+        bookProps={readBook}/> ))}
+     {readBooks.length %3 !== 0 &&
+      <div className="emptyBookCard"></div>
+    }
       </section>
     </section>
   );

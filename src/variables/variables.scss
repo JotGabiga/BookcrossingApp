@@ -16,160 +16,67 @@ $darkgray-filter: invert(32%) sepia(1%) saturate(0%) hue-rotate(73deg)
 $header-font-family: "Yeseva One", serif;
 $text-font-family: "Lato", sans-serif;
 
-// TEXT
-@mixin logo() {
-  font-family: "Roboto", sans-serif;
+@mixin uniHeader1($text-align, $color){
+  font-family:  $header-font-family;
+  text-align: $text-align;
+  color: $color;
   font-weight: 900;
-  font-size: 16px;
-  letter-spacing: 0.16em;
+};
+@mixin uniHeader23($text-align, $color){
+  font-family: $text-font-family;
+  text-align: $text-align;
+  color: $color;
+  font-weight: 600;
+};
+@mixin uniHeader456($text-align){
+  font-family: $text-font-family;
+  text-align: $text-align;
   color: $dark-color;
+  margin: 0px;
+};
+@mixin uniText($text-align, $color){
+  font-family: $text-font-family;
+  text-align: $text-align;
+  color: $dark-color;
+};
+@mixin logo() {
+  @include uniText(center, $dark-color);
+  @include body1();
+  font-weight: 900;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   &:hover {
     cursor: pointer;
   }
 }
-@mixin headline1($text-align, $color) {
-  font-family: "Yeseva One";
-  font-size: 76px;
-  text-align: $text-align;
-  color: $color;
-  font-weight: 400;
-}
-@mixin headline2($text-align) {
-  font-family: "Yeseva One";
-  font-size: 54px;
-  text-align: $text-align;
-  color: $dark-color;
-  font-weight: 400;
-}
-@mixin headline3($text-align) {
-  font-family: "Yeseva One";
-  font-size: 43px;
-  text-align: $text-align;
-  color: #191919d2;
-}
-@mixin headline4($text-align) {
-  font-family: "Roboto";
-  font-size: 31px;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin headline5($text-align) {
-  font-family: "Roboto";
-  font-size: 22px;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin headline6($text-align) {
-  font-family: "Lato";
-  font-size: 18px;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin body1($text-align, $line-height, $color) {
-  font-family: "Lato";
-  font-size: 16px;
-  text-align: $text-align;
-  color: $color;
-  line-height: $line-height;
-}
-@mixin body2($text-align, $color) {
-  font-family: "Lato";
-  font-size: 14px;
-  text-align: $text-align;
-  color: $color;
-  font-weight: 400;
-}
-@mixin subtitle1($text-align) {
-  font-family: "Roboto";
-  font-size: 14px;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin subtitle2($text-align) {
-  font-family: "Roboto";
-  font-size: 13px;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin button($text-align) {
-  font-family: "Roboto";
-  font-size: 14px;
-  weight: 500;
+
+// BUTTONS
+@mixin button() {
+  @include uniText(center, $dark-color);
+  @include body2();
+  font-weight: 700;
   letter-spacing: 1.25px;
   text-transform: uppercase;
-  text-align: $text-align;
-  color: $dark-color;
-}
-@mixin overline($text-align, $color) {
-  font-family: "Roboto";
-  font-size: 10px;
-  text-align: $text-align;
-  color: $color;
-}
-@mixin caption($text-align, $color) {
-  font-family: "Roboto";
-  font-size: 12px;
-  text-align: $text-align;
-  color: $color;
-}
-// BUTTONS
-
-@mixin filterButton() {
-  @include button(center);
   padding: 10px 10px 10px 10px;
   white-space: nowrap;
-  width: 100%;
-  height: 34px;
-  background: $accentDarker-color;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   border: none;
-  font-family: $text-font-family;
-  font-size: 1.5vh;
-  font-weight: 500;
-  color: $dark-color;
-  // &:hover {
-  //   background: $accent-color;
-  //   cursor: pointer;
-  //   color: $dark-color;
-  //   border: none;
-  // }
-}
-@mixin grayButton() {
-  @include button(center);
-  background: $gray-color;
-  border-radius: 5px;
-  width: 125px;
-  height: 36px;
-  border: none;
-}
-@mixin basicButton() {
-  margin: 0px 0px 0px 0px;
   background: $accentDarker-color;
-  border-radius: 5px;
-  width: 180px;
-  height: 42px;
-  border: none;
-  color: $dark-color;
-  &:hover {
-    background-color: $accent-color;
-  }
-}
-@mixin roundButton() {
-  background: $basicDarker-color;
-  border-radius: 50%;
-  min-width: 50px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  text-transform: inherit;
-  padding: 0px;
-  filter: $darkgray-filter;
   &:hover {
     background-color: $accent-color;
     cursor: pointer;
   }
+}
+@mixin basicButton() {
+  @include button();
+  width: 180px;
+  height: 42px;
+}
+@mixin fullWidthButton() {
+  @include button();
+  width: 100%;
+  height: 30%;
 }
 
 // MAIN CONTAINER STYLES
@@ -195,4 +102,174 @@ $text-font-family: "Lato", sans-serif;
   border-radius: 30px;
   width: 100%;
   margin-bottom: 25px;
+}
+
+
+
+// TEXT - Full screen
+@mixin headline1() {
+  font-size: 3.2rem;
+}
+@mixin headline2() {
+  font-size: 1.6rem;
+}
+@mixin headline3() {
+  font-size: 1.2rem;
+}
+@mixin headline4() {
+  font-size: 1.05rem;
+}
+@mixin headline5() {
+  font-size: 1rem;
+}
+@mixin headline6() {
+  font-size: 0.9rem;
+}
+@mixin body1() {
+  font-size: 1rem;
+}
+@mixin body2() {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+@mixin caption() {
+  font-size: 0.95rem;
+}
+
+// TEXT - 1400px - 1700px
+@mixin headline1_1700() {
+  font-size: 3.1rem;
+}
+@mixin headline2_1700() {
+  font-size: 1.5rem;
+}
+@mixin headline3_1700() {
+  font-size: 1.2rem;
+}
+@mixin headline4_1700() {
+  font-size: 1.05rem;
+}
+@mixin headline5_1700() {
+  font-size: 0.9rem;
+}
+@mixin headline6_1700() {
+  font-size: 0.8rem;
+}
+@mixin body1_1700() {
+  font-size: 0.9rem;
+}
+@mixin body2_1700() {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+@mixin caption_1700() {
+  font-size: 0.9rem;
+}
+// TEXT - 1100px - 1400px
+@mixin headline1_1400() {
+  font-size: 3rem;
+}
+@mixin headline2_1400() {
+  font-size: 1.4rem;
+}
+@mixin headline3_1400() {
+  font-size: 1.15rem;
+}
+@mixin headline4_1400() {
+  font-size: 1rem
+}
+@mixin headline5_1400() {
+  font-size: 0.8rem;
+}
+@mixin headline6_1400() {
+  font-size: 0.7rem;
+}
+@mixin body1_1400() {
+  font-size: 0.8rem;
+}
+@mixin body2_1400() {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+@mixin caption_1400() {
+  font-size: 0.85rem;
+}
+// TEXT - 600px - 1100px
+@mixin headline1_1100() {
+  font-size: 2.95rem;
+}
+@mixin body1_1100() {
+  font-size: 0.7rem;
+}
+@mixin body2_1100() {
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+@mixin headline2_1100() {
+  font-size: 1.35rem;
+}
+@mixin headline3_1100() {
+  font-size: 1.1rem;
+}
+@mixin headline4_1100() {
+  font-size: 0.95rem;
+}
+@mixin headline5_1100() {
+  font-size: 0.75rem;
+}
+@mixin caption_1100() {
+  font-size: 0.8rem;
+}
+
+// TEXT - 450px - 600px
+@mixin headline1_600() {
+  font-size: 2.85rem;
+}
+@mixin headline2_600() {
+  font-size: 1.25rem;
+}
+@mixin headline3_600() {
+  font-size: 1rem;
+}
+@mixin body1_600() {
+  font-size: 0.6rem;
+}
+@mixin body2_600() {
+  font-size: 0.55rem;
+  font-weight: 400;
+}
+@mixin headline4_600() {
+  font-size: 0.9rem;
+}
+@mixin headline5_600() {
+  font-size: 0.7rem;
+}
+@mixin caption_600() {
+  font-size: 0.75rem;
+}
+// TEXT - 0px - 450px
+@mixin headline1_450() {
+  font-size: 2.7rem;
+}
+@mixin headline2_450() {
+  font-size: 1.1rem;
+}
+@mixin headline3_450() {
+  font-size: 1rem;
+}
+@mixin body1_450() {
+  font-size: 0.55rem;
+}
+@mixin body2_450() {
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+@mixin headline4_450() {
+  font-size: 0.85rem;
+}
+@mixin headline5_450() {
+  font-size: 0.65rem;
+}
+@mixin caption_450() {
+  font-size: 0.7rem;
 }

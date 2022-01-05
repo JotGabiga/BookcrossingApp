@@ -25,35 +25,33 @@
   align-items: center;
   justify-content: center;
   h1 {
-    @include headline3(center);
-    // margin: 30px 0px 30px 0px;
-    
+    @include uniHeader1(center, $dark-color);
+    @include headline1();
+    margin: 30px 0px 30px 0px;
   }
-  article {
-    @include headline5(center);
-    font-weight: 600;
-    // margin: 0px;
-    
+  h2 {
+    @include uniHeader23(center, $dark-color);
+    @include headline2();
+    margin: 0px;
   }
 }
 .filtrSection {
   padding: 20px 0px 70px 0px;
   display: flex;
-  justify-content: flex-end;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .booksSection {
   z-index: 2;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
 .radio-toolbar {
-  margin: 10px 0px 10px 0px;
+  margin: 10px 2px 10px 2px;
 }
 .radio-toolbar input[type="radio"] {
   opacity: 0;
@@ -61,8 +59,10 @@
   width: 0;
 }
 .radio-toolbar label {
-  @include filterButton();
-  // z-index: 2;
+  @include button();
+  width: 100%;
+  height: 34px;
+  z-index: 2;
 }
 .radio-toolbar input[type="radio"]:checked + label {
   background-color: #7d8f95;
@@ -78,15 +78,6 @@
   display: flex;
   flex-direction: row;
   align-items: left;
-  // padding: 50px 100px 0px 0px;
-  h1 {
-    @include headline3(center);
-    margin: 30px 0px 30px 0px;
-  }
-  article {
-    @include headline5(center);
-    margin: 0px;
-  }
   img {
     margin: 5% 5% 5% 0%;
     width: 100%;
@@ -97,7 +88,74 @@
     width: 100%;
     border: 1px solid $gray-color;
     border-radius: 22px;
-    padding:20px;
-    margin:40px;
+    padding: 20px;
+    margin: 40px;
+  }
+}
+
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+  .welcomeSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .filtrSection {
+    justify-content: center;
+  }
+  .textSec {
+    h1 {
+      @include headline1_1700();
+    }
+    h2 {
+      @include headline2_1700();
+    }
+  }
+}
+
+// - 1100px - 1400px
+@media only screen and (max-width: 1400px) {
+  .textSec {
+    h1 {
+      @include headline1_1400();
+    }
+    h2 {
+      @include headline2_1400();
+    }
+  }
+}
+
+// - 600px - 1100px
+@media only screen and (max-width: 1100px) {
+  .textSec {
+    h1 {
+      @include headline1_1100();
+    }
+    h2 {
+      @include headline2_1100();
+    }
+  }
+}
+
+// - 450px - 600px
+@media only screen and (max-width: 600px) {
+  .textSec {
+    h1 {
+      @include headline1_600();
+    }
+    h2 {
+      @include headline2_600();
+    }
+  }
+}
+
+// - 0px - 450px
+@media only screen and (max-width: 450px) {
+  .textSec {
+    h1 {
+      @include headline1_450();
+    }
+    h2 {
+      @include headline2_450();
+    }
   }
 }

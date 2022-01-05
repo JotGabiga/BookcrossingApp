@@ -9,7 +9,7 @@ const Footer = (props) => {
     return (
         <section className="footer">
            <section  className="footerContainer">
-              <div className="test">
+              <div className="leftContainer">
                 <div className ="socialMediaContainer">
                   <a href="https://www.instagram.com">
                     <img src={instagram} alt="instagram icon"></img>

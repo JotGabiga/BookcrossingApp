@@ -1,20 +1,19 @@
-.ratingStars {
-
+@import "../../variables/variables.scss";
+.star {
+  font-size: 180%;
+  size: 16px;
 }
-.star{
-    font-size:180%;
-    size: 16px;
-}
-
 button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  .on {
-    color: rgb(255, 208, 0);
-  }
-  .off {
-    color: #ccc;
-  }
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: rgb(255, 208, 0);
+}
+.off {
+  color: #ccc;
+}
+
+

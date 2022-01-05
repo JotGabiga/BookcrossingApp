@@ -1,5 +1,4 @@
 @import '../../variables/variables.scss';
-
 .navBar {
 display: flex;
 align-items: center;
@@ -25,10 +24,6 @@ justify-content: space-between;
 }
 .navContainer{
   display: flex;
-  button{
-      border:none;
-      background-color: $white-color;
-  }
     img{
         height: 25px;
         filter: $dark-color; 
@@ -55,33 +50,4 @@ justify-content: space-between;
             height: 15px;
             filter: $dark-color;
         }
-}
-.navModal{
-    position: absolute;
-    top:0px;
-    left:0px;
-    padding: 10px 20px 0px 0px;
-    width:21%;
-    height: 100%;
-    background-color: $basic-color;
-}
-.exitSec{
-display: flex;
-justify-content: flex-end;
-img{
-    height: 20px;
-}
-&:hover img{
-cursor: pointer;
-}
-}
-.navSec{
-    li{
-        color:black;
-        font-size: 16px;
-        list-style: none;
-        @include headline6(left);
-        margin:20px 0px 20px 0px
-    }
-   
 }

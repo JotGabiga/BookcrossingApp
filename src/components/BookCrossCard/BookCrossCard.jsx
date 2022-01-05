@@ -7,17 +7,23 @@ const BookCrossCard = (props) => {
   return (
     <section className="bookCrossCard">
       <section className="bookCoverSection">
-        <Link style={{ textDecoration: 'none'}} to={`/bookpage/${props.bookProps._id}`}>
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/bookpage/${props.bookProps._id}`}
+        >
           <img src={props.bookProps.cover} alt="book cover"></img>
         </Link>
       </section>
       <section className="bookDesSection">
         <section className="titleSec">
-          <Link style={{ textDecoration: 'none'}} to={`/bookpage/${props.bookProps._id}`}>
-            <h4>{props.bookProps.title}</h4>
+          <Link
+            style={{ textDecoration: "none" }}
+            to={`/bookpage/${props.bookProps._id}`}
+          >
+            <h3>{props.bookProps.title}</h3>
           </Link>
           <div className="authorRatingSection">
-            <h5>{props.bookProps.authors}</h5>
+            <h4>{props.bookProps.authors}</h4>
             <div className="ratingSection">
               <RatingStar
                 ratingProps={props.bookProps.rating || 0}

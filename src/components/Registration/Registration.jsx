@@ -1,6 +1,5 @@
 import React from "react";
 import "./Registration.scss";
-import Button from "@material-ui/core/Button";
 import girlWithBooks from "./assets/girl-book1.png";
 // import googleIcon from "./assets/google-brands.svg";
 import { StylesProvider } from "@material-ui/core/styles";
@@ -22,12 +21,9 @@ const Registration = (props) => {
       </section>
       <section className="regContainer registrationFormSection">
         <StylesProvider injectFirst>
-          <Button
-            classes={{ root: "googleButton", label: "googleButton-label" }}
-            variant="contained">
-            {/* <img src={googleIcon} alt="google icon"></img> */}
+          <button>
             Zaloguj się
-          </Button>
+          </button>
           <h6>lub załóż konto</h6>
           <TextField
             classes={{ root: "input", label: "input-label" }}
@@ -60,12 +56,9 @@ const Registration = (props) => {
                     i mam powyżej 18 lat."
             />
           </section>
-          <Button
-            classes={{ root: "basicButton", label: "basicButton-label" }}
-            variant="contained"
-          >
+          <button>
             Rejestracja
-          </Button>
+          </button>
         </StylesProvider>
       </section>
     </section>

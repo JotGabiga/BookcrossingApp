@@ -8,7 +8,7 @@
 5. [Demo](#demo)
 ## General info
 
-Bookcrossing App is prepared as MVP. The main purpose of the application is to manage user's home library and exchange books with friends.  
+The main purpose of the application is to manage user's home library and exchange books with friends.  
 
 App was created on educational purposes, mainly so that I could consolidate my knowledge of Back-end and Front-end technologies.
 

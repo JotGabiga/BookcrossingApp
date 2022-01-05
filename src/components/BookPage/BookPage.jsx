@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./BookPage.scss";
-import Button from "@material-ui/core/Button";
 import { StylesProvider } from "@material-ui/core/styles";
 import RatingStars from "../RatingStars/RatingStars";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Comments from "../Comments/Comments";
-
 
 const BookPage = (props) => {
   const { id } = useParams();
@@ -20,8 +18,7 @@ const BookPage = (props) => {
         setBook(res.data);
         setLoading(false);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, [id]);
 
   if (isLoading) {
@@ -31,8 +28,7 @@ const BookPage = (props) => {
   function printElements(array) {
     return array.join(", ");
   }
-  
- 
+
   return (
     <section className="bookPage">
       <StylesProvider injectFirst>
@@ -42,32 +38,29 @@ const BookPage = (props) => {
           </aside>
           <section className="bookDesSec">
             <section className="bookDes">
-              <header>{book.title}</header>
-              <h6>{printElements(book.authors)}</h6>
-              <h6>{printElements(book.tags)}</h6>
+              <h2>{book.title}</h2>
+              <h3>{printElements(book.authors)}</h3>
+              <h4>{printElements(book.tags)}</h4>
             </section>
             <section className="actionSection">
               <div className="rateSection">
-                <h6>Oceń książkę</h6>
+                <h4>Oceń książkę</h4>
                 <div className="ratingStarsSection">
                   <RatingStars votes={book.votes}></RatingStars>
                 </div>
-                <section>Ocena: {book.rating || 0} /10</section>
+                <h5>Ocena: {book.rating || 0} /10</h5>
               </div>
-              <section className="bookcrossingSection">
-              </section>
+              {/* <section className="bookcrossingSection">
+              </section> */}
             </section>
             <article>{book.description}</article>
-            <Button
-              classes={{ root: "basicButton", label: "basicButton-label" }}
-              variant="contained"
-            >
-              Dodaj na półkę
-            </Button>
+            <div className="buttonSection">
+            <button>Dodaj na półkę</button>
+            </div>
           </section>
         </section>
         <section className="commentsSection">
-          <div className="profileDiv"></div>
+          <div className="emptyDiv"></div>
           <section className="commentSection">
             <Comments comments={book.comments}></Comments>
           </section>

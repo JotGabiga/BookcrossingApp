@@ -5,17 +5,20 @@
   margin: 20px 0px 20px 0px;
 }
 .commentUserName {
-  @include body1(left, 19px, $dark-color);
+  @include uniText(left, $dark-color);
+  @include body1();
   font-weight: bold;
   
 }
 .commentDate {
-  @include caption(left, $darkgray-color);
+  @include uniText(left, $darkgray-color);
+  @include caption();
   margin: 5px 0px 5px 0px;
 }
 
 .commentActions{
-  @include  caption(left, $darkgray-color);
+  @include uniText(left, $darkgray-color);
+  @include  caption();
   display: flex;
 }
 .commentActionsBtn{
@@ -27,7 +30,8 @@ font-weight: 700;
   }
 }
 .commentText {
-  @include  body2(left, $dark-color);
+  @include uniText(left, $dark-color);
+  @include  body2();
   margin: 5px 0px 5px 0px;
   text-align: justify;
 }
@@ -37,5 +41,91 @@ font-weight: 700;
   &:hover{
     cursor: pointer;
     color: #92a9b1;
+  }
+}
+
+
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+  .commentUserName {
+    @include body1_1700();
+  }
+  .commentDate {
+    @include caption_1700();
+  }
+  
+  .commentActions{
+    @include  caption_1700();
+  }
+  .commentText {
+    @include  body2_1700();
+  }
+}
+
+// - 1100px - 1400px
+@media only screen and (max-width: 1400px) {
+  .commentUserName {
+    @include body1_1400();
+  }
+  .commentDate {
+    @include caption_1400();
+  }
+  
+  .commentActions{
+    @include  caption_1400();
+  }
+  .commentText {
+    @include  body2_1400();
+  }
+}
+
+// - 600px - 1100px
+@media only screen and (max-width: 1100px) {
+  .commentUserName {
+    @include body1_1100();
+  }
+  .commentDate {
+    @include caption_1100();
+  }
+  
+  .commentActions{
+    @include  caption_1100();
+  }
+  .commentText {
+    @include  body2_1100();
+  }
+}
+
+// - 450px - 600px
+@media only screen and (max-width: 600px) {
+  .commentUserName {
+    @include body1_600();
+  }
+  .commentDate {
+    @include caption_600();
+  }
+  
+  .commentActions{
+    @include  caption_600();
+  }
+  .commentText {
+    @include  body2_600();
+  }
+}
+
+// - 0px - 450px
+@media only screen and (max-width: 450px) {
+  .commentUserName {
+    @include body1_450();
+  }
+  .commentDate {
+    @include caption_450();
+  }
+  
+  .commentActions{
+    @include  caption_450();
+  }
+  .commentText {
+    @include  body2_450();
   }
 }

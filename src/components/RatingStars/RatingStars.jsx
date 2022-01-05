@@ -23,7 +23,6 @@ const RatingStar = (props) => {
                 <button 
                     type="button" 
                     key={index} 
-                    // key={Math.random().toString(36).substr(2, 9)} 
                     className={index <= (hover || rating) ? "on":"off"}
                     onClick={()=>updateRating(index)}
                     onMouseEnter={() => setHover(index)}

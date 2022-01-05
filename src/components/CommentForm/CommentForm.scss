@@ -1,0 +1,41 @@
+@import "../../variables/variables.scss";
+
+.MuiFormControlLabel-label{
+@include uniText(left, $darkgray-color);
+@include body2();
+};
+
+
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+    .MuiFormControlLabel-label{
+        @include body2_1700();
+        };
+  }
+  // - 900px - 1400px
+  @media only screen and (max-width: 1400px) {
+    .MuiFormControlLabel-label{
+        @include body2_1400();
+        };
+  }
+  // - 600px - 900px
+  @media only screen and (max-width: 900px) {
+    .MuiFormControlLabel-label{
+        @include body2_1100();
+        };
+  }
+  
+  // - 450px - 600px
+  @media only screen and (max-width: 600px) {
+    .MuiFormControlLabel-label{
+        @include body2_600();
+        };
+  }
+  
+  // - 0px - 450px
+  @media only screen and (max-width: 450px) {
+    .MuiFormControlLabel-label{
+        @include body2_450();
+        };
+  } ;
+  

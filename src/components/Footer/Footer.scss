@@ -21,7 +21,8 @@
 .menuContainer{
     justify-content: flex-end;
  li{
-     @include subtitle1(right);
+    @include uniText(right, $dark-color);
+     @include body2();
      color:$basicDarker-color;
      margin:15px 0px 15px 15px;
      list-style: none;
@@ -29,13 +30,86 @@
 }
 .sighn{
     h6{
-        @include caption(left,$darkgray-color);
+        @include uniText(left, $darkgray-color);
+        @include caption();
         color:$basicDarker-color;
     }
 }
-.test{
+.leftContainer{
     display: flex;
     flex-direction: column;
     width:30%;
-    padding-top: 100px;
+    padding-top: 31px;
 }
+
+
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+    .menuContainer{
+     li{
+         @include body2_1700();
+     }
+    }
+    .sighn{
+        h6{
+            @include caption_1700();
+        }
+    }
+  }
+  
+  // - 1100px - 1400px
+  @media only screen and (max-width: 1400px) {
+    .menuContainer{
+        li{
+            @include body2_1400();
+        }
+       }
+       .sighn{
+           h6{
+               @include caption_1400();
+           }
+       }
+  }
+  
+  // - 600px - 1100px
+  @media only screen and (max-width: 1100px) {
+    .menuContainer{
+        li{
+            @include body2_1100();
+        }
+       }
+       .sighn{
+           h6{
+               @include caption_1100();
+           }
+       }
+  }
+  
+  // - 450px - 600px
+  @media only screen and (max-width: 600px) {
+    .menuContainer{
+        li{
+            @include body2_600();
+        }
+       }
+       .sighn{
+           h6{
+               @include caption_600();
+           }
+       }
+  }
+  
+  // - 0px - 450px
+  @media only screen and (max-width: 450px) {
+    .menuContainer{
+        li{
+            @include body2_450();
+        }
+       }
+       .sighn{
+           h6{
+               @include caption_450();
+           }
+       }
+  }
+  

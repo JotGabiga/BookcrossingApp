@@ -81,10 +81,10 @@ const Home = (props) => {
           <img src={girlWithBooks} alt="girl with books"></img>
           <div className="textSec">
             <h1>Wymień się książką!</h1>
-            <article>
+            <h2>
               Znajdź książkowe inspiracje, twórz bibliotekę przeczytanych
               tytułów i tych, które chcesz przeczytać, wymieniaj się książkami.
-            </article>
+            </h2>
             <input
               type="search"
               onChange={handleChange}
@@ -119,7 +119,7 @@ const Home = (props) => {
         loader={<h4>Loading...</h4>}
         endMessage={
           <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
+            <h3>Yay! You have seen it all</h3>
           </p>
         }
       >

@@ -9,7 +9,6 @@ export default class BookById extends React.Component{
         axios.get  (`https://bookcrossing-api.herokuapp.com/books/${_id}`)
 
         .then(res => {
-            // console.log(res);
             this.setState({bookById: res.data });
         })
     }

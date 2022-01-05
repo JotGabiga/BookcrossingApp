@@ -66,11 +66,9 @@ const Comments = (props) => {
   //bookcrossing-api.herokuapp.com/books/${id}
 
   return (
-    <div>
+    <div className="comments">
       <h3>Komentarze</h3>
-
       <CommentForm submitLabel="Dodaj" handleSubmit={addComment} />
-
       <div>
         {comments
           .filter((comments) => comments.parentId === null)

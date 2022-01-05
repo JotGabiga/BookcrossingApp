@@ -15,7 +15,8 @@
   margin-top: 200px;
   z-index: 2;
   text {
-    @include body1(center, 19px, $dark-color);
+    @include uniText(center, $dark-color);
+    @include body1();
     margin-top: 20px;
     max-width: 100px;
     font-weight: 700;
@@ -51,13 +52,16 @@
     margin: 0px 0px 30px 20px;
   }
   h3 {
-    @include headline3(left);
+    @include  uniHeader23(left, $dark-color);
+    @include headline3();
   }
   text {
-    @include body1(left, 19px, $dark-color);
+    @include uniText(left, $dark-color);
+    @include body1();
   }
   h6 {
-    @include headline6(left);
+    @include  uniHeader456(left);
+    @include headline6();
     font-weight: 700;
     margin: 0px 0px 10px 20px;
   }
@@ -77,11 +81,4 @@
   margin-top: 80px;
   display: flex;
   justify-content: center;
-}
-// BUTTON
-.basicButton {
-  @include basicButton();
-}
-.basicButton-label {
-  @include button(center);
 }

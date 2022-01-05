@@ -14,11 +14,13 @@
   align-items: center;
   padding: 50px 100px 0px 0px;
   h1 {
-    @include headline3(center);
+    @include uniHeader23(center, $dark-color);
+    @include headline3();
     margin:30px 0px 30px 0px;
   }
   article {
-    @include headline5(center);
+    @include  uniHeader456(center);
+    @include headline5();
     margin:0px;
   }
   img {

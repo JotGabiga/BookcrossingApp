@@ -2,7 +2,6 @@ import React from "react";
 import "./Settings.scss";
 import { StylesProvider } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import profileImage from "./assets/user-icon.svg";
 
 const Settings = (props) => {
@@ -37,32 +36,17 @@ const Settings = (props) => {
               <h6>Hasło</h6>
               <TextField id="outlined-helperText" label="" variant="outlined" />
             </div>
-            <Button
-              classes={{ root: "basicButton", label: "basicButton-label" }}
-              variant="contained"
-            >
-              Zmień
-            </Button>
+            <button>Zmień</button>
           </section>
           <section className="accountChangesSection">
             <div>
               <h6>Usuń konto</h6>
               <section>Usuń konto i jego dane</section>
             </div>
-            <Button
-              classes={{ root: "basicButton", label: "basicButton-label" }}
-              variant="contained"
-            >
-              Usuń
-            </Button>
+            <button>Usuń</button>
           </section>
           <section className="submmitSection">
-            <Button
-              classes={{ root: "basicButton", label: "basicButton-label" }}
-              variant="contained"
-            >
-              Rejestracja
-            </Button>
+            <button>Rejestracja</button>
           </section>
         </StylesProvider>
       </section>

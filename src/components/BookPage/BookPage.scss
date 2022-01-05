@@ -2,123 +2,256 @@
 .bookPage {
   @include containerStyle(100px 0px 100px 0px, column);
 }
+.bookSection {
+  display: flex;
+  flex-direction: row;
+}
 .commentsSection {
   display: flex;
   flex-direction: row;
-  margin:25px 0px 25px 0px;
+  margin: 2vh 0vw 2vh 0vw;
 }
 .bookCoverSec {
   width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  img{
-    height:auto;
+  img {
+    width: 90%;
+    height: auto;
   }
 }
 .bookDesSec {
-  margin-left: 50px;
-  width: 65%;
+  margin-left: 5%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   article {
-    @include body1(left, 22px, $dark-color);
-    text-align: justify;
+    @include uniText(justify, $dark-color);
+    @include body1();
     font-weight: 400;
-    margin-bottom: 40px;
+    margin: 1vh 0vw 3vh 0vw;
   }
 }
-.bookDes{
-    h6 {
-        @include headline6(left);
-        margin: 0px 0px 10px 0px;
-      }
-      header {
-        @include headline4(left);
-        font-weight: 700;
-        margin-bottom: 50px;
-      }
+.buttonSection{
+  button {
+    @include basicButton();
+  }
 }
-.bookSection {
-  display: flex;
-  flex-direction: row;
+.bookDes {
+  h2 {
+    @include uniHeader23(left, $dark-color);
+    @include headline2();
+    margin: 1.5vh 0vw 1.5vh 0vw;
+  }
+  h3 {
+    @include uniHeader23(left, $dark-color);
+    @include headline3();
+    margin: 1.5vh 0vw 1.5vh 0vw;
+  }
+  h4 {
+    @include uniHeader456(left);
+    @include headline4();
+    margin: 1.5vh 0vw 1.5vh 0vw;
+  }
 }
 .actionSection {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0px 50px 0px;
-  text {
-    @include subtitle1(right);
-    max-width: 150px;
-  }
-}
-.basicButton {
-  @include basicButton();
-}
-.basicButton-label {
-  @include button(center);
-}
-.button {
-  @include roundButton();
-  img {
-    width: 20px;
-    height: 20px;
-  }
-}
-.button-label {
-  color: $darkgray-color;
-  width: 20px;
-}
-.bookcrossingSection {
-  display: flex;
-  align-items: center;
-  h6 {
-    @include headline6(right);
-    margin: 0px;
-    text-transform: uppercase;
-  }
+  margin: 1vh 0vw 1vh 0vw;
 }
 .rateSection {
-  width: 50%;
-  h6 {
-    @include headline6(left);
-    margin: 0px;
+  width: 100%;
+  h4 {
+    @include uniHeader456(left);
+    @include headline4();
     text-transform: uppercase;
+    margin: 1vh 0vw 1vh 0vw;
+  }
+  h5 {
+    @include uniHeader456(left);
+    @include headline5();
+    text-transform: uppercase;
+    margin: 1vh 0vw 1vh 0vw;
   }
 }
 .ratingStarsSection {
-  margin: 10px 0px 10px 0px;
+  margin: 1vh 0vw 1vh 0vw;
   display: flex;
   flex-direction: row;
   img {
     width: 20px;
   }
 }
-.commentSection{
-flex-direction: row;
-width: 65%;
-margin-left:50px;
+.commentSection {
+  flex-direction: row;
+  width: 60%;
+  margin-left: 5%;
 }
-.MuiInputBase-root{
-  width:100%;
+.MuiInputBase-root {
+  width: 100%;
 }
-.profileDiv{
+.emptyDiv {
   width: 35%;
 }
-.checkboxSec {
-  width: 100%;
-  display: flex;
-justify-content: space-between;
-  margin-bottom: 30px;
-  // REMOVE REDUNDANT 
-  button{
-    text-transform: uppercase;
-    font-family: "Roboto";
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 1.25px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #191919;
+
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+  .bookDesSec {
+    article {
+      @include body1_1700();
+    }
   }
-}
+  .bookDes {
+    h2 {
+      @include headline2_1700();
+    }
+    h3 {
+      @include headline3_1700();
+    }
+    h4 {
+      @include headline4_1700();
+    }
+    .rateSection {
+      h4 {
+        @include headline4_1700();
+      }
+      h5 {
+        @include headline5_1700();
+      }
+    }
+  }
+};
+// - 900px - 1400px
+@media only screen and (max-width: 1400px) {
+  .bookDesSec {
+    article {
+      @include body1_1400();
+    }
+  }
+  .bookDes {
+    h2 {
+      @include headline2_1400();
+    }
+    h3 {
+      @include headline3_1400();
+    }
+    h4 {
+      @include headline4_1400();
+    }
+    .rateSection {
+      h4 {
+        @include headline4_1400();
+      }
+      h5 {
+        @include headline5_1400();
+      }
+    }
+  }
+};
+// - 600px - 900px
+@media only screen and (max-width: 900px) {
+  .bookSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .bookCoverSec {
+    width: 100%;
+    img {
+      width: 75%;
+      height: auto;
+    }
+  }
+  .bookDesSec {
+    margin-left: 0%;
+    width: 100%;
+  }
+  .commentSection {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .emptyDiv {
+    width: 0%;
+  }
+  .bookDesSec {
+    article {
+      @include body1_1100();
+    }
+  }
+  .bookDes {
+    h2 {
+      @include headline2_1100();
+    }
+    h3 {
+      @include headline3_1100();
+    }
+    h4 {
+      @include headline4_1100();
+    }
+    .rateSection {
+      h4 {
+        @include headline4_1100();
+      }
+      h5 {
+        @include headline5_1100();
+      }
+    }
+  }
+};
+
+// - 450px - 600px
+@media only screen and (max-width: 600px) {
+  .bookDesSec {
+    article {
+      @include body1_600();
+    }
+  }
+  .bookDes {
+    h2 {
+      @include headline2_600();
+    }
+    h3 {
+      @include headline3_600();
+    }
+    h4 {
+      @include headline4_600();
+    }
+    .rateSection {
+      h4 {
+        @include headline4_600();
+      }
+      h5 {
+        @include headline5_600();
+      }
+    }
+  }
+
+};
+
+// - 0px - 450px
+@media only screen and (max-width: 450px) {
+  .bookDesSec {
+    article {
+      @include body1_450();
+    }
+  }
+  .bookDes {
+    h2 {
+      @include headline2_450();
+    }
+    h3 {
+      @include headline3_450();
+    }
+    h4 {
+      @include headline4_450();
+    }
+    .rateSection {
+      h4 {
+        @include headline4_450();
+      }
+      h5 {
+        @include headline5_450();
+      }
+    }
+  }
+};

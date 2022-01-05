@@ -18,7 +18,8 @@
   flex-direction: column;
   padding: 275px 0px 0px 100px;
   h6 {
-    @include body1(center, 32px, $dark-color);
+    @include uniText(center, $dark-color);
+    @include body1();
     margin: 20px 0px 20px 0px;
   }
 }
@@ -34,11 +35,13 @@
   align-items: center;
   padding: 50px 100px 0px 0px;
   h1 {
-    @include headline3(center);
+    @include  uniHeader23(center, $dark-color);
+    @include headline3();
     margin:30px 0px 30px 0px;
   }
   article {
-    @include headline5(center);
+    @include  uniHeader456(center);
+    @include headline5();
     margin:0px;
   }
   img {
@@ -46,13 +49,7 @@
     max-width: 500px;
   }
 }
-//   POPRAWIĆ BUTTONY ZDUBLOWANY KOD
-.input {
-  width: 100%;
-}
-.MuiInputBase-root {
-  @include textField();
-}
+
 // CHECKBOX STYLE
 .MuiIconButton-label {
   color: grey;
@@ -64,33 +61,8 @@
   }
 }
 .MuiFormControlLabel-label {
-  @include caption(left,$darkgray-color);
-}
-// BUTTON
-.basicButton {
-  @include basicButton();
-}
-.basicButton-label {
-  @include button(center);
+  @include uniText(left, $darkgray-color);
+  @include caption();
 }
 
-.googleButton {
-  background-color: $basicDarker-color;
-  width: 100%;
-  border-radius: 25px;
-  height: 50px;
-  &:hover{
-    background-color: $accent-color;
-  
-  }
-  img {
-    height: 30px;
-    padding-right: 50px;
-    filter: $darkgray-filter;
-  }
-}
-.googleButton-label {
-  @include headline6(center);
-  color: $darkgray-color;
-  text-transform: initial;
-}
+
