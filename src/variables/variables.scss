@@ -111,7 +111,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 3.2rem;
 }
 @mixin headline2() {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 @mixin headline3() {
   font-size: 1.2rem;
@@ -126,10 +126,10 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.9rem;
 }
 @mixin body1() {
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 @mixin body2() {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 @mixin caption() {
@@ -156,10 +156,10 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.8rem;
 }
 @mixin body1_1700() {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 @mixin body2_1700() {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 400;
 }
 @mixin caption_1700() {
@@ -185,10 +185,10 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.7rem;
 }
 @mixin body1_1400() {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
 }
 @mixin body2_1400() {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 @mixin caption_1400() {
@@ -199,10 +199,10 @@ $text-font-family: "Lato", sans-serif;
   font-size: 2.95rem;
 }
 @mixin body1_1100() {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 @mixin body2_1100() {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 @mixin headline2_1100() {
@@ -212,10 +212,13 @@ $text-font-family: "Lato", sans-serif;
   font-size: 1.1rem;
 }
 @mixin headline4_1100() {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 @mixin headline5_1100() {
   font-size: 0.75rem;
+}
+@mixin headline6_1100() {
+  font-size: 0.65rem;
 }
 @mixin caption_1100() {
   font-size: 0.8rem;
@@ -232,17 +235,20 @@ $text-font-family: "Lato", sans-serif;
   font-size: 1rem;
 }
 @mixin body1_600() {
-  font-size: 0.6rem;
+  font-size: 0.85rem;
 }
 @mixin body2_600() {
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   font-weight: 400;
 }
 @mixin headline4_600() {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 @mixin headline5_600() {
   font-size: 0.7rem;
+}
+@mixin headline6_600() {
+  font-size: 0.6rem;
 }
 @mixin caption_600() {
   font-size: 0.75rem;
@@ -258,17 +264,20 @@ $text-font-family: "Lato", sans-serif;
   font-size: 1rem;
 }
 @mixin body1_450() {
-  font-size: 0.55rem;
+  font-size: 0.8rem;
 }
 @mixin body2_450() {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 @mixin headline4_450() {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 @mixin headline5_450() {
   font-size: 0.65rem;
+}
+@mixin headline6_450() {
+  font-size: 0.55rem;
 }
 @mixin caption_450() {
   font-size: 0.7rem;

@@ -3,47 +3,50 @@
     display: flex;
     justify-content: center;
     img{
-        height:15px;
+        height:12px;
         padding: 3px 10px 0px 0px;
     }
     text{
         margin: 0px;
     }
-    @include uniHeader456(center);
-    @include headline4();
+    h6{
+      @include uniHeader456(center);
+      @include headline6();
+    }
 }
+
 
 //  - 1400px - 1700px
 @media only screen and (max-width: 1700px) {
     .ratingStar {
-      @include headline4_1700();
+      @include headline6_1700();
     }
   }
   
   // - 1100px - 1400px
   @media only screen and (max-width: 1400px) {
     .ratingStar {
-      @include headline4_1400();
+      @include headline6_1400();
     }
   }
   
   // - 600px - 1100px
   @media only screen and (max-width: 1100px) {
     .ratingStar {
-      @include headline4_1100();
+      @include headline6_1100();
     }
   }
   
   // - 450px - 600px
   @media only screen and (max-width: 600px) {
     .ratingStar {
-      @include headline4_600();
+      @include headline6_600();
     }
   }
   
   // - 0px - 450px
   @media only screen and (max-width: 450px) {
     .ratingStar {
-      @include headline4_450();
+      @include headline6_450();
     }
   }

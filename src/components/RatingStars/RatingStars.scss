@@ -1,9 +1,9 @@
 @import "../../variables/variables.scss";
 .star {
-  font-size: 180%;
-  size: 16px;
+  font-size:1.5rem;
 }
 button {
+  padding-left: 0px;
   background-color: transparent;
   border: none;
   outline: none;
@@ -16,4 +16,34 @@ button {
   color: #ccc;
 }
 
+//  - 1400px - 1700px
+@media only screen and (max-width: 1700px) {
+  .star {
+    font-size:1.4rem;
+  }
+}
+// - 900px - 1400px
+@media only screen and (max-width: 1400px) {
+  .star {
+    font-size:1.35rem;
+  }
+}
+// - 600px - 900px
+@media only screen and (max-width: 900px) {
+  .star {
+    font-size:1.3rem;
+  }
+}
+// - 450px - 600px
+@media only screen and (max-width: 600px) {
+  .star {
+    font-size:1.2rem;
+  }
+}
+// - 0px - 450px
+@media only screen and (max-width: 450px) {
+  .star {
+    font-size:1.1rem;
+  }
+}
 
