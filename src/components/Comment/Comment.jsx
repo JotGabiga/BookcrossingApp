@@ -15,10 +15,16 @@ const Comment = ({ comment, currentUserId }) => {
   const [spoilerAlert, setSpoilerAlert] = useState(comment.checked);
   const canView = comment.checked === true;
 
+
+    // LOCALHOST
+    // `http://localhost:5000/books/${id}/comments`
+    
   const deleteComment = (commentId) => {
     if (window.confirm("Czy na pewno chcesz usunąć ten komentarz?")) {
-      axios.delete(`http://localhost:5000/books/${id}/comments`,
+      axios.delete(`https://bookcrossing-api.herokuapp.com/books/${id}/comments`,
+      
         {
+          
           data: {
             commentId: commentId,
           }

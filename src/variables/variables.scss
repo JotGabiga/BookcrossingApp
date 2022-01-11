@@ -70,8 +70,7 @@ $text-font-family: "Lato", sans-serif;
 }
 @mixin basicButton() {
   @include button();
-  width: 180px;
-  height: 42px;
+  height: auto;
 }
 @mixin fullWidthButton() {
   @include button();
@@ -129,7 +128,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 1.05rem;
 }
 @mixin body2() {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 @mixin caption() {
@@ -159,7 +158,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 1rem;
 }
 @mixin body2_1700() {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 400;
 }
 @mixin caption_1700() {
@@ -188,7 +187,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.95rem;
 }
 @mixin body2_1400() {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 @mixin caption_1400() {
@@ -202,7 +201,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.9rem;
 }
 @mixin body2_1100() {
-  font-size: 0.8rem;
+  font-size: 0.75em;
   font-weight: 400;
 }
 @mixin headline2_1100() {
@@ -238,7 +237,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.85rem;
 }
 @mixin body2_600() {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 @mixin headline4_600() {
@@ -267,7 +266,7 @@ $text-font-family: "Lato", sans-serif;
   font-size: 0.8rem;
 }
 @mixin body2_450() {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 400;
 }
 @mixin headline4_450() {

@@ -19,9 +19,6 @@ const CommentForm = ({ handleSubmit, submitLabel }) => {
     setText("");
     setChecked(false);
   };
-
-
-
   // const sendComment = (dataFromInput) => {
   //   setData(dataFromInput);
   //   console.log(data);
@@ -36,13 +33,7 @@ const CommentForm = ({ handleSubmit, submitLabel }) => {
   //   })
   //   .then((res) => {
   //     book.comments.push(comment);
-
   //   });
-
-
-
-
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -69,8 +60,6 @@ const CommentForm = ({ handleSubmit, submitLabel }) => {
               name="checked" />}
             label="Uwaga Spoiler! Ten temat może zawierać treści zdradzające fabułę."
           />
-          <button>Usuń</button>
-          <button disabled={isTextareaDisabled}>{submitLabel}</button>
           {/* <Button
             primary
             // onChange={() => sendComment(data)}
@@ -79,6 +68,10 @@ const CommentForm = ({ handleSubmit, submitLabel }) => {
           >
             {submitLabel}
           </Button> */}
+          <sectiom className="buttonSec">
+          <button>Usuń</button>
+          <button disabled={isTextareaDisabled}>{submitLabel}</button>
+          </sectiom>
         </section>
       </form>
     </div>

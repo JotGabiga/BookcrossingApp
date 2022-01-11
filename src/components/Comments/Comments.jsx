@@ -31,19 +31,21 @@ const Comments = (props) => {
   };
 
   const addComment = (text, checked, parentId) => {
-    // console.log("addComment", text, parentId);
+    console.log("addComment", text, parentId);
     const comment = {
       userId: "615f304d7067ad94bd94a0ce",
-      text: text,
       fullName: "Jane Doe",
+      text: text,
       time: new Date(),
       parentId: parentId || null,
       checked: checked
     };
    
+    // LOCALHOST
+    // `http://localhost:5000/books/${id}/comments`
     axios
-      .post(`http://localhost:5000/books/${id}/comments`, {
-        comments: comment,
+      .post(`https://bookcrossing-api.herokuapp.com/books/${id}/comments`, {
+        comments: comment
       })
       .then((res) => {
         comment._id = res.data

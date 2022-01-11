@@ -5,6 +5,16 @@
 @include body2();
 };
 
+.buttonSec{
+  margin: 2vh;
+  display: flex;
+  justify-content: end;
+  button{
+    margin-left: 10px;
+    @include basicButton();
+    width:110px;
+  }
+}
 
 //  - 1400px - 1700px
 @media only screen and (max-width: 1700px) {
