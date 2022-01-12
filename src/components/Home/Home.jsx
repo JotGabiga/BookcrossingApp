@@ -13,10 +13,15 @@ const Home = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loadMoreBooks, setLoadMoreBooks] = useState(true);
   const loadMore = (dataCount) => {
-    if (dataCount<9) {
+    if (dataCount < 9) {
       setLoadMoreBooks(false);
     }
-  }
+  };
+
+  useEffect(() =>{
+    loadBooksOnScroll()
+  }, [])
+
   const loadBooksOnScroll = () => {
     axios
       .get(
@@ -27,12 +32,14 @@ const Home = (props) => {
       .then((res) => {
         setBooks([...books, ...res.data]);
         setLoading(false);
-        return res.data.length
+        return res.data.length;
       })
       .then((dataCount) => {
         loadMore(dataCount);
       });
   };
+
+
   useEffect(() => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/tags`)
@@ -44,22 +51,19 @@ const Home = (props) => {
         });
         setTags(tagsArray);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
   }
   // selectedtags do state
   const filterBooksByTag = (ev) => {
-    console.log("filterBooksByTag")
+    console.log("filterBooksByTag");
     const tag = ev.currentTarget.value;
     setLoadMoreBooks(true);
     setTag(tag);
     axios
-      .get(
-        `https://bookcrossing-api.herokuapp.com/books?skip=0&tag=${tag}`
-      )
+      .get(`https://bookcrossing-api.herokuapp.com/books?skip=0&tag=${tag}`)
       .then((res) => {
         setBooks(res.data);
         setLoading(false);
@@ -81,7 +85,7 @@ const Home = (props) => {
             author.toLowerCase().includes(searchTerm.toLowerCase())
           ).length !== 0
       );
-
+  // loadBooksOnScroll();
   return (
     <section className="home">
       <section className="searchSection">
@@ -102,21 +106,20 @@ const Home = (props) => {
           </div>
         </div>
         <section className="filtrSection">
-        <div className="radio-toolbar">
-                <input
-                  key="allTags"
-                  value=""
-                  type="radio"
-                  name="tag"
-                  id="allTags"
-                  onChange={filterBooksByTag}
-                />
-                <label htmlFor="allTags">Wszytskie</label>
-              </div>
+          <div className="radio-toolbar">
+            <input
+              key="allTags"
+              value=""
+              type="radio"
+              name="tag"
+              id="allTags"
+              onChange={filterBooksByTag}
+            />
+            <label htmlFor="allTags">Wszytskie</label>
+          </div>
           {tags.map((tag, index) => {
-            
             return (
-            <div key={tag+index}className="radio-toolbar">
+              <div key={tag + index} className="radio-toolbar">
                 <input
                   key={tag}
                   value={tag}
@@ -131,11 +134,11 @@ const Home = (props) => {
           })}
         </section>
       </section>
-
       <InfiniteScroll
         dataLength={books.length} //This is important field to render the next data
         next={loadBooksOnScroll}
         hasMore={loadMoreBooks}
+        infinite-scroll-immediate-check="true"
         loader={<h4>Loading...</h4>}
         endMessage={
           <section style={{ textAlign: "center" }}>
