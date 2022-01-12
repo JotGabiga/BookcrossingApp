@@ -50,12 +50,10 @@ const BookPage = (props) => {
                 </div>
                 <h5>Ocena: {book.rating || 0} /10</h5>
               </div>
-              {/* <section className="bookcrossingSection">
-              </section> */}
             </section>
             <article>{book.description}</article>
             <div className="buttonSection">
-            <button>Dodaj na półkę</button>
+              <button>Dodaj na półkę</button>
             </div>
           </section>
         </section>

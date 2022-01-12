@@ -8,7 +8,6 @@
   @include uniText(left, $dark-color);
   @include body1();
   font-weight: bold;
-  
 }
 .commentDate {
   @include uniText(left, $darkgray-color);
@@ -16,34 +15,33 @@
   margin: 5px 0px 5px 0px;
 }
 
-.commentActions{
+.commentActions {
   @include uniText(left, $darkgray-color);
-  @include  caption();
+  @include caption();
   display: flex;
 }
-.commentActionsBtn{
+.commentActionsBtn {
   margin-right: 15px;
-  &:hover{
-cursor: pointer;
-color:$dark-color;
-font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    color: $dark-color;
+    font-weight: 700;
   }
 }
 .commentText {
   @include uniText(left, $dark-color);
-  @include  body2();
+  @include body2();
   margin: 5px 0px 5px 0px;
   text-align: justify;
 }
 .spoilerComment {
   font-weight: 600;
-  color:$accentDarker-color;
-  &:hover{
+  color: $accentDarker-color;
+  &:hover {
     cursor: pointer;
     color: #92a9b1;
   }
 }
-
 
 //  - 1400px - 1700px
 @media only screen and (max-width: 1700px) {
@@ -53,12 +51,12 @@ font-weight: 700;
   .commentDate {
     @include caption_1700();
   }
-  
-  .commentActions{
-    @include  caption_1700();
+
+  .commentActions {
+    @include caption_1700();
   }
   .commentText {
-    @include  body2_1700();
+    @include body2_1700();
   }
 }
 
@@ -70,12 +68,12 @@ font-weight: 700;
   .commentDate {
     @include caption_1400();
   }
-  
-  .commentActions{
-    @include  caption_1400();
+
+  .commentActions {
+    @include caption_1400();
   }
   .commentText {
-    @include  body2_1400();
+    @include body2_1400();
   }
 }
 
@@ -87,12 +85,12 @@ font-weight: 700;
   .commentDate {
     @include caption_1100();
   }
-  
-  .commentActions{
-    @include  caption_1100();
+
+  .commentActions {
+    @include caption_1100();
   }
   .commentText {
-    @include  body2_1100();
+    @include body2_1100();
   }
 }
 
@@ -104,12 +102,12 @@ font-weight: 700;
   .commentDate {
     @include caption_600();
   }
-  
-  .commentActions{
-    @include  caption_600();
+
+  .commentActions {
+    @include caption_600();
   }
   .commentText {
-    @include  body2_600();
+    @include body2_600();
   }
 }
 
@@ -121,11 +119,11 @@ font-weight: 700;
   .commentDate {
     @include caption_450();
   }
-  
-  .commentActions{
-    @include  caption_450();
+
+  .commentActions {
+    @include caption_450();
   }
   .commentText {
-    @include  body2_450();
+    @include body2_450();
   }
 }

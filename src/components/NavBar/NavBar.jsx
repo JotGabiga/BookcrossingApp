@@ -8,7 +8,7 @@ const NavBar = (props) => {
     <section className="navBar">
       <div className="navContainer">
       </div>
-      <div className="logoContainer">
+      <div className="logoContainer">  
      <Link style={{ textDecoration: 'none'}} to="/">
           <h1>Bookstagram</h1>
           </Link>

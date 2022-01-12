@@ -9,7 +9,6 @@
 //     componentDidMount(){
 //         axios.get  ('https://bookcrossing-api.herokuapp.com/books')
 //         .then(res => {
-//             // console.log(res);
 //             this.setState({books: res.data });
 //         })
 //     }

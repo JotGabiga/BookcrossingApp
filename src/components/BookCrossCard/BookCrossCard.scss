@@ -31,7 +31,7 @@
   height: 70%;
   justify-content: flex-end;
   h3 {
-    @include  uniHeader23(left, $dark-color);
+    @include uniHeader23(left, $dark-color);
     @include headline3();
     height: 55px;
   }
@@ -58,7 +58,7 @@
 }
 .ratingSection {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 //  - 1400px - 1700px
@@ -90,7 +90,7 @@
   }
   .bookCrossCard {
     margin: 12px 0px 12px 0px;
-    width: 47%;  
+    width: 47%;
   }
   .bookDesSection {
     h6 {
@@ -116,26 +116,27 @@
   }
   .bookCoverSection {
     img {
-    width: 100%;
-    object-fit:contain;
-    min-height: fit-content;
-    max-height: fit-content;
-    }}
-    .bookDesSection {
-      h6 {
-        @include body2_1100();
-      }
+      width: 100%;
+      object-fit: contain;
+      min-height: fit-content;
+      max-height: fit-content;
     }
-    .titleSec {
-      h3 {
-        @include headline3_1100();
-      }
+  }
+  .bookDesSection {
+    h6 {
+      @include body2_1100();
     }
-    .authorRatingSection {
-      h4 {
-        @include headline4_1100();
-      }
+  }
+  .titleSec {
+    h3 {
+      @include headline3_1100();
     }
+  }
+  .authorRatingSection {
+    h4 {
+      @include headline4_1100();
+    }
+  }
 }
 
 // - 450px - 600px

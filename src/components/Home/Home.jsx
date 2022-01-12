@@ -7,34 +7,36 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = (props) => {
   const [isLoading, setLoading] = useState(true);
-  const [tag, setTag] = useState({});
+  const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
   const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [noMore, setNoMore] = useState(true);
-
+  const [loadMoreBooks, setLoadMoreBooks] = useState(true);
+  const loadMore = (dataCount) => {
+    if (dataCount<9) {
+      setLoadMoreBooks(false);
+    }
+  }
   const loadBooksOnScroll = () => {
-    console.log("scroll");
     axios
       .get(
-        `https://bookcrossing-api.herokuapp.com/books/paginated?skip=${
+        `https://bookcrossing-api.herokuapp.com/books?skip=${
           books.length || 0
-        }`
+        }&tag=${tag}`
       )
       .then((res) => {
         setBooks([...books, ...res.data]);
         setLoading(false);
+        return res.data.length
+      })
+      .then((dataCount) => {
+        loadMore(dataCount);
       });
-    if (books.length % 9 !== 0 ) {
-      setNoMore(false);
-    }
   };
-
   useEffect(() => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/tags`)
       .then((res) => {
-        setTag(res.data);
         setLoading(false);
         let tagsArray = [];
         res.data.forEach((t) => {
@@ -43,22 +45,28 @@ const Home = (props) => {
         setTags(tagsArray);
       })
       .catch((err) => {
-        console.log(err);
       });
-    loadBooksOnScroll();
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
   }
   // selectedtags do state
   const filterBooksByTag = (ev) => {
+    console.log("filterBooksByTag")
+    const tag = ev.currentTarget.value;
+    setLoadMoreBooks(true);
+    setTag(tag);
     axios
       .get(
-        `https://bookcrossing-api.herokuapp.com/books?tags=${ev.currentTarget.value}`
+        `https://bookcrossing-api.herokuapp.com/books?skip=0&tag=${tag}`
       )
       .then((res) => {
         setBooks(res.data);
         setLoading(false);
+        return res.data.length;
+      })
+      .then((dataCount) => {
+        loadMore(dataCount);
       });
   };
   const handleChange = (event) => {
@@ -94,11 +102,23 @@ const Home = (props) => {
           </div>
         </div>
         <section className="filtrSection">
-          {tags.map((tag) => {
-            return (
-              <div className="radio-toolbar">
+        <div className="radio-toolbar">
                 <input
-                  key={tag._id}
+                  key="allTags"
+                  value=""
+                  type="radio"
+                  name="tag"
+                  id="allTags"
+                  onChange={filterBooksByTag}
+                />
+                <label htmlFor="allTags">Wszytskie</label>
+              </div>
+          {tags.map((tag, index) => {
+            
+            return (
+            <div key={tag+index}className="radio-toolbar">
+                <input
+                  key={tag}
                   value={tag}
                   type="radio"
                   name="tag"
@@ -115,12 +135,12 @@ const Home = (props) => {
       <InfiniteScroll
         dataLength={books.length} //This is important field to render the next data
         next={loadBooksOnScroll}
-        hasMore={noMore}
+        hasMore={loadMoreBooks}
         loader={<h4>Loading...</h4>}
         endMessage={
-          <p style={{ textAlign: "center" }}>
-            <h3>Yay! You have seen it all</h3>
-          </p>
+          <section style={{ textAlign: "center" }}>
+            <h3> Wszytskie książki zostały wyświetlone..</h3>
+          </section>
         }
       >
         <Books books={results} loading={isLoading} />

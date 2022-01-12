@@ -1,5 +1,4 @@
 import React from "react";
-import "./Pagination.scss";
 
 const Pagination = ({ bookPerPage, totalBooks, paginate }) => {
   const pageNumbers = [];

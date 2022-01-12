@@ -1,42 +1,42 @@
 @import "../../variables/variables.scss";
-.comments{
-    h3 {
-        @include uniHeader23(left, $dark-color);
-        @include headline3();
-    }
+.comments {
+  h3 {
+    @include uniHeader23(left, $dark-color);
+    @include headline3();
+  }
 }
 
 //  - 1400px - 1700px
 @media only screen and (max-width: 1700px) {
-    h3 {
-        @include headline3_1700();
-    }
+  h3 {
+    @include headline3_1700();
+  }
 }
 
 // - 1100px - 1400px
 @media only screen and (max-width: 1400px) {
-    h3 {
-        @include headline3_1400();
-    }
+  h3 {
+    @include headline3_1400();
+  }
 }
 
 // - 600px - 1100px
 @media only screen and (max-width: 1100px) {
-    h3 {
-        @include headline3_1100();
-    }
+  h3 {
+    @include headline3_1100();
+  }
 }
 
 // - 450px - 600px
 @media only screen and (max-width: 600px) {
-    h3 {
-        @include headline3_600();
-    }
+  h3 {
+    @include headline3_600();
+  }
 }
 
 // - 0px - 450px
 @media only screen and (max-width: 450px) {
-    h3 {
-        @include headline3_450();
-    }
+  h3 {
+    @include headline3_450();
+  }
 }
