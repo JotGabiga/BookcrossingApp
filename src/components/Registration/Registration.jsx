@@ -1,7 +1,6 @@
 import React from "react";
 import "./Registration.scss";
 import girlWithBooks from "./assets/girl-book1.png";
-// import googleIcon from "./assets/google-brands.svg";
 import { StylesProvider } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";

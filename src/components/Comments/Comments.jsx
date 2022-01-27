@@ -9,12 +9,6 @@ const Comments = (props) => {
   const { id } = useParams();
   const [comments, setComments] = useState(props.comments || []);
 
-  const getReplies = (commentId) => {
-    return comments
-      .filter((comments) => comments.parentId === commentId)
-      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
-  };
-
   const addComment = (text, checked, parentId) => {
     const comment = {
       userId: "615f304d7067ad94bd94a0ce",
@@ -50,7 +44,6 @@ const Comments = (props) => {
             <Comment
               key={rootComment._id}
               comment={rootComment}
-              replies={getReplies(rootComment._id)}
               currentUserId={"615f304d7067ad94bd94a0ce"}
             />
           ))}

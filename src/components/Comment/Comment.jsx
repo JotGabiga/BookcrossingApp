@@ -8,7 +8,6 @@ const Comment = ({ comment, currentUserId }) => {
   const time = new Date(comment.time).toLocaleDateString();
   const { id } = useParams();
   const [spoilerAlert, setSpoilerAlert] = useState(comment.checked);
-  // const canView = comment.checked === true;
 
   // LOCALHOST
   // `http://localhost:5000/books/${id}/comments`

@@ -6,7 +6,6 @@ import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 import BookPage from "./components/BookPage/BookPage";
-import Start from "./components/Start/Start";
 import { Fragment } from "react";
 import { isIE } from 'react-device-detect';
 import IeProblem from './ieProblem.gif';
@@ -28,7 +27,6 @@ function App() {
       <section className="content">
         <Route exact path="/" component={Home} />
         <Route path="/yourprofile" component={Profile} />
-        <Route path="/login" component={Start} />
         <Route path="/settings" component={Settings} />
         <Route path="/bookpage/:id" component={BookPage} />
       </section>

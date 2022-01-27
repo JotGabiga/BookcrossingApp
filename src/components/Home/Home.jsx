@@ -18,9 +18,9 @@ const Home = (props) => {
     }
   };
 
-  useEffect(() =>{
-    loadBooksOnScroll()
-  }, [])
+  useEffect(() => {
+    loadBooksOnScroll();
+  }, []);
 
   const loadBooksOnScroll = () => {
     axios
@@ -39,7 +39,6 @@ const Home = (props) => {
       });
   };
 
-
   useEffect(() => {
     axios
       .get(`https://bookcrossing-api.herokuapp.com/tags`)
@@ -56,7 +55,6 @@ const Home = (props) => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  // selectedtags do state
   const filterBooksByTag = (ev) => {
     console.log("filterBooksByTag");
     const tag = ev.currentTarget.value;
@@ -76,6 +74,7 @@ const Home = (props) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
   const results = !searchTerm
     ? books
     : books.filter(
@@ -85,7 +84,7 @@ const Home = (props) => {
             author.toLowerCase().includes(searchTerm.toLowerCase())
           ).length !== 0
       );
-  // loadBooksOnScroll();
+
   return (
     <section className="home">
       <section className="searchSection">
